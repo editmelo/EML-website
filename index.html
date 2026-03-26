@@ -935,6 +935,21 @@
       .promo-cta-wrap { justify-content: center; }
     }
 
+    /* ── Top Promo Banner ── */
+    .top-promo {
+      background: linear-gradient(90deg, var(--blue-dark), #1a6bc4, var(--blue-light));
+      padding: 10px 20px;
+      text-align: center;
+      font-size: 0.85rem; font-weight: 700;
+      color: var(--white);
+      position: relative; z-index: 999;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .top-promo:hover { opacity: 0.92; }
+    .top-promo a { color: var(--white); text-decoration: underline; text-underline-offset: 2px; }
+    .top-promo .top-promo-flash { animation: promoPulse 1.5s ease-in-out infinite; }
+
     /* ══════════════════════════════════════════════
        THE WEBSITE PLUG — POPUP
     ══════════════════════════════════════════════ */
@@ -1057,6 +1072,11 @@
   </style>
 </head>
 <body>
+
+<!-- TOP PROMO BANNER -->
+<div class="top-promo promo-timed" onclick="document.getElementById('plugPopup').classList.add('open')">
+  ⚡ <strong>The Website Plug</strong> — Custom website for just $200. Limited time offer. <a href="#" onclick="event.stopPropagation();document.getElementById('plugPopup').classList.add('open')">Claim yours →</a>
+</div>
 
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
