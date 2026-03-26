@@ -1416,13 +1416,12 @@
         hasLogo, colors, refs, content, existing, socials, special, prompt
       ];
 
-      if (SHEET_URL !== 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec') {
-        fetch(SHEET_URL, {
-          method: 'POST', mode: 'no-cors',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ row: row })
-        }).catch(function(){});
-      }
+      fetch(SHEET_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain' },
+        body: JSON.stringify({ row: row })
+      }).catch(function(){});
 
       formEl.style.display = 'none';
       successEl.style.display = 'block';
