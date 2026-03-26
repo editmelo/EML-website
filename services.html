@@ -162,14 +162,15 @@
     #nav.scrolled .hamburger span { background: var(--text); }
 
     .mob-menu {
-      display: none; position: fixed; inset: 0; z-index: 999;
+      display: none; position: fixed; inset: 0; z-index: 1100;
       background: rgba(7,16,31,0.97); backdrop-filter: blur(20px);
       flex-direction: column; align-items: center; justify-content: center; gap: 20px;
     }
     .mob-menu.open { display: flex; }
     .mob-menu > a { font-size: 1.4rem; font-weight: 800; color: var(--white); letter-spacing: -0.01em; transition: color 0.2s; }
     .mob-menu > a:hover { color: var(--blue-light); }
-    .mob-close { position: absolute; top: 22px; right: 22px; font-size: 2rem; color: var(--white); background: none; border: none; cursor: pointer; line-height: 1; }
+    .mob-close { position: absolute; top: 22px; right: 22px; font-size: 2rem; color: var(--white); background: none; border: none; cursor: pointer; line-height: 1; z-index: 1101; }
+    .mob-menu.open ~ #nav .hamburger { display: none !important; }
     .mob-svc-group { display: flex; flex-direction: column; align-items: center; gap: 10px; }
     .mob-svc-label { font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: rgba(255,255,255,0.35); }
     .mob-svc-group a { font-size: 1rem !important; color: rgba(255,255,255,0.75) !important; font-weight: 700 !important; transition: color 0.2s !important; }
@@ -520,23 +521,23 @@
     </a>
     <ul class="nav-links">
       <li class="nav-dropdown">
-        <a href="services.html">Services <span class="caret"></span></a>
+        <a href="services">Services <span class="caret"></span></a>
         <div class="dropdown-menu">
-          <a href="services.html#brand-identity">
+          <a href="services#brand-identity">
             <span class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></span>
             Brand Identity
           </a>
-          <a href="services.html#web-development">
+          <a href="services#web-development">
             <span class="dd-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
             Web Development
           </a>
-          <a href="services.html#social-management">
+          <a href="services#social-management">
             <span class="dd-icon"><svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
             Social Management
           </a>
           <div class="dd-sep"></div>
           <div class="dd-also">Also available</div>
-          <a href="services.html#creative-on-demand">
+          <a href="services#creative-on-demand">
             <span class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
             Creative On-Demand
           </a>
@@ -1006,10 +1007,10 @@
       <div>
         <div class="footer-h">Services</div>
         <ul class="footer-links">
-          <li><a href="services.html#brand-identity">Brand Identity</a></li>
-          <li><a href="services.html#web-development">Web Development</a></li>
-          <li><a href="services.html#social-management">Social Management</a></li>
-          <li><a href="services.html#creative-on-demand">Creative On-Demand</a></li>
+          <li><a href="services#brand-identity">Brand Identity</a></li>
+          <li><a href="services#web-development">Web Development</a></li>
+          <li><a href="services#social-management">Social Management</a></li>
+          <li><a href="services#creative-on-demand">Creative On-Demand</a></li>
           <li><a href="quiz.html">Brand Match Quiz</a></li>
           <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book a Consultation</a></li>
         </ul>
