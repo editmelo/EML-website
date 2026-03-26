@@ -2021,7 +2021,7 @@
     //    }
     // 4. Click Deploy > New Deployment > Web App > Anyone can access > Deploy
     // 5. Copy the URL and paste it below
-    var SHEET_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec';
 
     form.addEventListener('submit', function(e) {
       e.preventDefault();
@@ -2071,7 +2071,7 @@
       ];
 
       // Submit to Google Sheets
-      if (SHEET_URL !== 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE') {
+      if (SHEET_URL !== 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec') {
         fetch(SHEET_URL, {
           method: 'POST', mode: 'no-cors',
           headers: { 'Content-Type': 'application/json' },
