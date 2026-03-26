@@ -654,9 +654,9 @@
     body:has(.top-promo) #nav { top: 38px; }
     body:has(.top-promo) #hero { padding-top: 38px; }
     @media (max-width: 820px) {
-      .top-promo { font-size: 0.72rem; padding: 8px 14px; }
-      body:has(.top-promo) #nav { top: 34px; }
-      body:has(.top-promo) #hero { padding-top: 34px; }
+      .top-promo { font-size: 0.68rem; padding: 6px 12px; line-height: 1.4; }
+      body:has(.top-promo) #nav { top: 30px; }
+      body:has(.top-promo) #hero { padding-top: 30px; }
     }
 
     /* ── Popup Teaser ── */
@@ -1489,7 +1489,7 @@
     var formEl = document.getElementById('plugFormInner');
 
     if (!sessionStorage.getItem('plugDismissed')) {
-      setTimeout(function() { overlay.classList.add('open'); }, 5000);
+      setTimeout(function() { overlay.classList.add('open'); }, 3000);
     }
 
     function closePopup() {
