@@ -229,36 +229,36 @@
     }
     .web-slider::-webkit-scrollbar { display: none; }
     .web-slide {
-      flex: 0 0 340px; scroll-snap-align: start;
-      border-radius: 20px; overflow: hidden; position: relative;
-      border: 1px solid rgba(18,79,158,0.1);
-      box-shadow: 0 8px 32px rgba(0,0,0,0.08);
-      transition: transform 0.35s, box-shadow 0.35s;
-      cursor: pointer; background: var(--white);
+      flex: 0 0 360px; scroll-snap-align: start;
+      display: flex; flex-direction: column; align-items: center;
+      text-align: center; background: none; border: none; box-shadow: none;
+      transition: transform 0.35s;
+      cursor: pointer;
     }
-    .web-slide:hover {
-      transform: translateY(-8px) scale(1.02);
-      box-shadow: 0 20px 60px rgba(18,79,158,0.18);
-    }
+    .web-slide:hover { transform: translateY(-10px); }
     .web-slide-img {
-      width: 100%; height: 220px; object-fit: cover; object-position: top;
-      transition: transform 0.4s;
+      width: 100%; height: auto; border-radius: 12px;
+      box-shadow: 0 16px 48px rgba(0,0,0,0.12), 0 4px 12px rgba(0,0,0,0.06);
+      transition: transform 0.4s, box-shadow 0.4s;
     }
-    .web-slide:hover .web-slide-img { transform: scale(1.05); }
+    .web-slide:hover .web-slide-img {
+      transform: scale(1.03);
+      box-shadow: 0 24px 64px rgba(18,79,158,0.2), 0 8px 20px rgba(0,0,0,0.1);
+    }
     .web-slide-info {
-      padding: 18px 20px; display: flex; align-items: center; justify-content: space-between;
+      padding: 16px 0 0; display: flex; flex-direction: column; align-items: center; gap: 10px;
     }
     .web-slide-name {
-      font-size: 0.85rem; font-weight: 800; color: var(--text);
+      font-size: 0.88rem; font-weight: 800; color: var(--text);
       letter-spacing: -0.01em;
     }
     .web-slide-arrow {
-      width: 32px; height: 32px; border-radius: 50%;
+      width: 36px; height: 36px; border-radius: 50%;
       background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
       display: flex; align-items: center; justify-content: center; flex-shrink: 0;
-      transition: transform 0.25s;
+      transition: transform 0.25s, box-shadow 0.25s;
     }
-    .web-slide:hover .web-slide-arrow { transform: translateX(3px); }
+    .web-slide:hover .web-slide-arrow { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(71,201,243,0.35); }
     .web-slide-arrow svg { width: 14px; height: 14px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
 
     .slider-nav {
@@ -278,7 +278,7 @@
     .slider-btn:hover svg { stroke: #fff; }
     .slider-btn svg { width: 18px; height: 18px; stroke: var(--text); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; transition: stroke 0.2s; }
 
-    @media (max-width: 600px) { .web-slide { flex: 0 0 280px; } }
+    @media (max-width: 600px) { .web-slide { flex: 0 0 300px; } }
 
     /* ══════════════════════════════════════════════
        BRANDS / LOGOS SECTION
@@ -550,7 +550,7 @@
         <a class="web-slide reveal d2" href="https://hydrationturbine.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/hydrationturbine.com.png" alt="hydrationturbine.com" /><div class="web-slide-info"><span class="web-slide-name">hydrationturbine.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
         <a class="web-slide reveal" href="https://indyfoodsafety.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/indyfoodsafety.com.png" alt="indyfoodsafety.com" /><div class="web-slide-info"><span class="web-slide-name">indyfoodsafety.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
         <a class="web-slide reveal d1" href="https://inthegymhoops.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/inthegymhoops.com.png" alt="inthegymhoops.com" /><div class="web-slide-info"><span class="web-slide-name">inthegymhoops.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
-        <a class="web-slide reveal d2" href="https://jmgfitzone.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/jmgfitzone.com.png" alt="jmgfitzone.com" /><div class="web-slide-info"><span class="web-slide-name">jmgfitzone.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
+        <a class="web-slide reveal d2" href="https://www.jmgfitzone.com/" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/jmgfitzone.com.png" alt="jmgfitzone.com" /><div class="web-slide-info"><span class="web-slide-name">jmgfitzone.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
         <a class="web-slide reveal" href="https://lifeondice.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/lifeondice.com.png" alt="lifeondice.com" /><div class="web-slide-info"><span class="web-slide-name">lifeondice.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
         <a class="web-slide reveal d1" href="https://lizamazing.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/lizamazing.com.png" alt="lizamazing.com" /><div class="web-slide-info"><span class="web-slide-name">lizamazing.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
         <a class="web-slide reveal d2" href="https://oliviawestspeaks.com" target="_blank" rel="noopener"><img class="web-slide-img" src="portfolio_assets/website_designs/oliviawestspeaks.com.png" alt="oliviawestspeaks.com" /><div class="web-slide-info"><span class="web-slide-name">oliviawestspeaks.com</span><span class="web-slide-arrow"><svg viewBox="0 0 24 24"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg></span></div></a>
@@ -730,8 +730,8 @@
 
   // Website slider nav
   const slider = document.getElementById('webSlider');
-  document.getElementById('sliderPrev').addEventListener('click', () => slider.scrollBy({ left: -370, behavior: 'smooth' }));
-  document.getElementById('sliderNext').addEventListener('click', () => slider.scrollBy({ left: 370, behavior: 'smooth' }));
+  document.getElementById('sliderPrev').addEventListener('click', () => slider.scrollBy({ left: -390, behavior: 'smooth' }));
+  document.getElementById('sliderNext').addEventListener('click', () => slider.scrollBy({ left: 390, behavior: 'smooth' }));
 
   // Filter tabs
   document.querySelectorAll('.filter-tab').forEach(tab => {
