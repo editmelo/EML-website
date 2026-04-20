@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Church Website Design in Indianapolis — $200 | Edit Me Lo</title>
+  <meta name="description" content="$200 custom-coded website for Central Indiana churches. Delivered in 5 days. Built by a local Indianapolis team. Limited-time offer through April 30, 2026." />
+  <meta property="og:title" content="Church Website Design in Indianapolis — $200 | Edit Me Lo" />
+  <meta property="og:description" content="$200 custom-coded website for Central Indiana churches. Delivered in 5 days." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.editmelo.com/churches" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Edit Me Lo Creative Agency",
+    "image": "https://www.editmelo.com/assets/logo-primary.png",
+    "url": "https://www.editmelo.com/churches",
+    "telephone": "(463) 280-1331",
+    "email": "info@editmelo.com",
+    "address": { "@type": "PostalAddress", "addressLocality": "Indianapolis", "addressRegion": "IN", "addressCountry": "US" },
+    "aggregateRating": { "@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "25" },
+    "makesOffer": {
+      "@type": "Offer",
+      "name": "The Website Plug for Churches",
+      "description": "Custom-coded 1-3 page website for Central Indiana churches, delivered in 3-5 business days.",
+      "price": "200.00",
+      "priceCurrency": "USD",
+      "validThrough": "2026-04-30",
+      "url": "https://www.editmelo.com/churches#intake-form"
+    }
+  }
+  </script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-light: #47C9F3;
+      --blue-dark:  #124F9E;
+      --gray:       #ECECEC;
+      --white:      #FFFFFF;
+      --dark:       #07101f;
+      --text:       #101828;
+      --text-muted: #475467;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif; color: var(--text); overflow-x: hidden;
+      background: linear-gradient(160deg, #ECECEC 0%, #dde8f8 40%, #e8f0fb 70%, #ECECEC 100%);
+      background-attachment: fixed;
+    }
+    img { display: block; max-width: 100%; }
+    a  { text-decoration: none; color: inherit; }
+    svg { display: block; }
+    .container { width: 92%; max-width: 1160px; margin: 0 auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px; border-radius: 50px;
+      font-weight: 700; font-size: 0.93rem; letter-spacing: 0.02em;
+      cursor: pointer; white-space: nowrap; border: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white); box-shadow: 0 4px 20px rgba(71,201,243,0.3);
+    }
+    .btn-primary:hover { box-shadow: 0 10px 40px rgba(71,201,243,0.5); }
+    .btn-glass {
+      background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2);
+      color: var(--white); backdrop-filter: blur(10px);
+    }
+    .btn-glass:hover { background: rgba(255,255,255,0.14); }
+
+    .tag {
+      display: inline-block;
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 6px 16px; border-radius: 50px;
+      background: rgba(18,79,158,0.08); color: var(--blue-dark);
+      border: 1px solid rgba(18,79,158,0.15); margin-bottom: 16px;
+    }
+    .tag-light { background: rgba(71,201,243,0.15); color: var(--blue-light); border-color: rgba(71,201,243,0.25); }
+    .section-title {
+      font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+      font-weight: 900; line-height: 1.15; letter-spacing: -0.02em;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-light) 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--text-muted); line-height: 1.75; max-width: 640px; margin-top: 14px;
+    }
+    .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.6s, transform 0.6s; }
+    .reveal.visible { opacity: 1; transform: none; }
+    .d1 { transition-delay: 0.1s; } .d2 { transition-delay: 0.2s; } .d3 { transition-delay: 0.3s; }
+
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .anim-grad {
+      background: linear-gradient(-45deg, #07101f, #0c1e3a, #0f2d5e, #124F9E, #0d3a70, #0c1e3a, #07101f);
+      background-size: 400% 400%; animation: gradientShift 10s ease infinite;
+    }
+    #hero-beams { position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0; }
+    @keyframes beamGlowFade {
+      0%   { opacity: 0.9; }
+      100% { opacity: 0; transform: scaleX(2.5); }
+    }
+    .orb { position: absolute; border-radius: 50%; pointer-events: none; filter: blur(60px); }
+
+    /* ── NAV ── */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000; padding: 20px 0;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s, border-color 0.4s;
+    }
+    #nav.scrolled {
+      background: rgba(255,255,255,0.85); backdrop-filter: blur(20px);
+      padding: 12px 0; box-shadow: 0 4px 30px rgba(0,0,0,0.06);
+      border-bottom: 1px solid rgba(200,220,255,0.4);
+    }
+    .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; width: 92%; max-width: 1160px; margin: 0 auto; }
+    .nav-logo img { height: 48px; }
+    .nav-links { display: flex; gap: 32px; list-style: none; }
+    .nav-links a { font-size: 0.88rem; font-weight: 700; color: var(--white); opacity: 0.85; transition: opacity 0.2s; }
+    .nav-links a:hover { opacity: 1; }
+    #nav.scrolled .nav-links a { color: var(--text); }
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-book {
+      padding: 10px 24px; font-size: 0.82rem; color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3); backdrop-filter: blur(8px);
+    }
+    #nav:not(.scrolled) .nav-book:hover { background: rgba(255,255,255,0.22); box-shadow: none; }
+    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+    #nav.scrolled .hamburger span { background: var(--text); }
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 1100;
+      background: rgba(7,16,31,0.97); backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 20px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu > a { font-size: 1.4rem; font-weight: 800; color: var(--white); letter-spacing: -0.01em; transition: color 0.2s; }
+    .mob-menu > a:hover { color: var(--blue-light); }
+    .mob-close { position: absolute; top: 22px; right: 22px; font-size: 2rem; color: var(--white); background: none; border: none; cursor: pointer; line-height: 1; z-index: 1101; }
+    .mob-menu.open ~ #nav .hamburger { display: none !important; }
+    @media (max-width: 820px) { .nav-links, .nav-right { display: none; } .hamburger { display: flex; } }
+
+    /* ── Top Promo Banner ── */
+    .top-promo {
+      background: linear-gradient(90deg, var(--blue-dark), #1a6bc4, var(--blue-light));
+      padding: 10px 20px; text-align: center;
+      font-size: 0.85rem; font-weight: 700; color: var(--white);
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1001;
+    }
+    body:has(.top-promo) #nav { top: 38px; }
+    @media (max-width: 820px) {
+      .top-promo { font-size: 0.68rem; padding: 6px 12px; line-height: 1.4; }
+      body:has(.top-promo) #nav { top: 30px; }
+    }
+
+    /* ══════════════════════════════════════════════
+       HERO
+    ══════════════════════════════════════════════ */
+    #hero {
+      min-height: 100vh; position: relative; display: flex; align-items: center; overflow: hidden;
+    }
+    @media (max-width: 820px) { #hero { min-height: 80vh; } }
+    .hero-inner {
+      position: relative; z-index: 1; text-align: center; padding: 130px 0 90px;
+      width: 100%;
+    }
+    .hero-inner .tag { margin-bottom: 22px; }
+    .hero-h1 {
+      font-size: clamp(2.2rem, 5.5vw, 3.6rem); font-weight: 900;
+      color: var(--white); line-height: 1.1; letter-spacing: -0.03em;
+      max-width: 900px; margin: 0 auto 20px;
+    }
+    .hero-h1 .hl {
+      background: linear-gradient(135deg, var(--blue-light), #a8e8ff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .hero-sub {
+      font-size: 1.05rem; color: rgba(255,255,255,0.65); line-height: 1.7;
+      max-width: 640px; margin: 0 auto 32px;
+    }
+    .hero-ctas { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+    .hero-ctas-row { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+    .hero-secondary {
+      font-size: 0.88rem; color: rgba(255,255,255,0.55); text-decoration: underline;
+      text-underline-offset: 3px; transition: color 0.2s;
+    }
+    .hero-secondary:hover { color: var(--blue-light); }
+    .hero-trust {
+      margin-top: 40px; font-size: 0.78rem; color: rgba(255,255,255,0.45);
+      letter-spacing: 0.02em;
+    }
+
+    /* ══════════════════════════════════════════════
+       PROBLEM
+    ══════════════════════════════════════════════ */
+    #problem { padding: 110px 0; }
+    .problem-head { text-align: center; margin-bottom: 64px; }
+    .problem-head .section-sub { margin: 14px auto 0; }
+    .problem-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px;
+    }
+    @media (max-width: 820px) { .problem-grid { grid-template-columns: 1fr; } }
+    .problem-card {
+      background: rgba(255,255,255,0.7); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 20px; padding: 36px 28px;
+      box-shadow: 0 8px 32px rgba(18,79,158,0.06);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .problem-card:hover { transform: translateY(-6px); box-shadow: 0 20px 48px rgba(18,79,158,0.12); }
+    .problem-icon {
+      width: 56px; height: 56px; border-radius: 16px; margin-bottom: 20px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 6px 20px rgba(18,79,158,0.2);
+    }
+    .problem-icon svg { width: 26px; height: 26px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .problem-h { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.01em; margin-bottom: 10px; color: var(--text); }
+    .problem-p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ══════════════════════════════════════════════
+       OFFER
+    ══════════════════════════════════════════════ */
+    #offer {
+      padding: 110px 0;
+      background: linear-gradient(160deg, #07101f 0%, #0d1f3c 50%, #07101f 100%);
+      position: relative; overflow: hidden;
+    }
+    #offer::before {
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(71,201,243,0.12) 0%, transparent 70%);
+    }
+    #offer::after {
+      content: ''; position: absolute; bottom: -80px; left: -80px;
+      width: 300px; height: 300px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(18,79,158,0.2) 0%, transparent 70%);
+    }
+    .offer-grid {
+      display: grid; grid-template-columns: 1.1fr 1fr; gap: 60px; align-items: center;
+      position: relative; z-index: 1;
+    }
+    @media (max-width: 880px) {
+      .offer-grid { grid-template-columns: 1fr; gap: 40px; }
+      .offer-pricing { order: -1; }
+    }
+    .offer-left h2 { color: var(--white); margin-bottom: 20px; }
+    .offer-left p { font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.8; margin-bottom: 24px; }
+    .offer-features {
+      display: flex; flex-direction: column; gap: 14px; margin-top: 28px;
+    }
+    .offer-feat {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 0.95rem; color: rgba(255,255,255,0.8); font-weight: 600;
+      line-height: 1.5;
+    }
+    .offer-feat-check {
+      width: 24px; height: 24px; border-radius: 50%; flex-shrink: 0; margin-top: 2px;
+      background: rgba(71,201,243,0.15); border: 1px solid rgba(71,201,243,0.3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .offer-feat-check svg { width: 12px; height: 12px; stroke: var(--blue-light); fill: none; stroke-width: 3; stroke-linecap: round; stroke-linejoin: round; }
+    .offer-pricing {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(71,201,243,0.25);
+      border-radius: 28px; padding: 48px 40px; position: relative; overflow: hidden;
+      text-align: center;
+    }
+    .offer-pricing::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, rgba(71,201,243,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .offer-pricing > * { position: relative; z-index: 1; }
+    .offer-urgency {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 16px; border-radius: 50px;
+      background: rgba(255,59,48,0.15); border: 1px solid rgba(255,59,48,0.3);
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+      color: #ff6b6b; margin-bottom: 20px;
+    }
+    .offer-urgency-dot {
+      width: 8px; height: 8px; border-radius: 50%; background: #ff6b6b;
+      animation: urgPulse 1.5s ease-in-out infinite;
+    }
+    @keyframes urgPulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+    .offer-title-sm { font-size: 1.25rem; font-weight: 900; color: var(--white); margin-bottom: 12px; letter-spacing: -0.02em; }
+    .offer-old { font-size: 1rem; font-weight: 700; color: rgba(255,255,255,0.35); text-decoration: line-through; margin-bottom: 4px; }
+    .offer-price {
+      font-size: clamp(3.5rem, 8vw, 5rem); font-weight: 900; letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--blue-light), #a8e8ff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1;
+    }
+    .offer-pay { font-size: 0.85rem; font-weight: 700; color: rgba(255,255,255,0.5); margin-top: 8px; }
+    .offer-hosting {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 14px; padding: 8px 16px; border-radius: 50px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.55);
+    }
+    .offer-cta { margin-top: 28px; display: flex; flex-direction: column; gap: 12px; align-items: center; }
+    .offer-cta .btn { width: 100%; justify-content: center; }
+    .offer-cta-small {
+      font-size: 0.84rem; color: rgba(255,255,255,0.5); text-decoration: underline;
+      text-underline-offset: 3px; transition: color 0.2s;
+    }
+    .offer-cta-small:hover { color: var(--blue-light); }
+
+    /* ══════════════════════════════════════════════
+       PROCESS
+    ══════════════════════════════════════════════ */
+    #process { padding: 110px 0; }
+    .process-head { text-align: center; margin-bottom: 72px; }
+    .process-head .section-sub { margin: 14px auto 0; }
+    .process-grid {
+      display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;
+      position: relative;
+    }
+    .process-grid::before {
+      content: ''; position: absolute; top: 44px;
+      left: calc(12.5% + 10px); right: calc(12.5% + 10px);
+      height: 1px;
+      background: linear-gradient(90deg, rgba(18,79,158,0.3), rgba(71,201,243,0.15));
+    }
+    @media (max-width: 880px) { .process-grid { grid-template-columns: 1fr 1fr; } .process-grid::before { display: none; } }
+    @media (max-width: 500px) { .process-grid { grid-template-columns: 1fr; } }
+    .proc-step { text-align: center; padding-top: 6px; }
+    .proc-num {
+      width: 88px; height: 88px; border-radius: 50%; margin: 0 auto 22px;
+      display: flex; align-items: center; justify-content: center;
+      position: relative; z-index: 1;
+      background: linear-gradient(160deg, #ECECEC 0%, #dde8f8 100%);
+    }
+    .proc-num-inner {
+      width: 76px; height: 76px; border-radius: 50%;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(18,79,158,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem; font-weight: 900;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      transition: transform 0.3s, box-shadow 0.3s;
+      box-shadow: 0 6px 24px rgba(18,79,158,0.08);
+    }
+    .proc-step:hover .proc-num-inner { transform: scale(1.06); box-shadow: 0 10px 32px rgba(18,79,158,0.15); }
+    .proc-day { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--blue-dark); margin-bottom: 8px; }
+    .proc-title { font-size: 1.1rem; font-weight: 800; color: var(--text); margin-bottom: 10px; letter-spacing: -0.01em; }
+    .proc-desc { font-size: 0.88rem; color: var(--text-muted); line-height: 1.7; max-width: 220px; margin: 0 auto; }
+
+    /* ══════════════════════════════════════════════
+       TESTIMONIALS
+    ══════════════════════════════════════════════ */
+    #testimonials { padding: 110px 0; background: rgba(255,255,255,0.4); }
+    .test-head { text-align: center; margin-bottom: 56px; }
+    .test-head .section-sub { margin: 14px auto 0; }
+    .test-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 40px; }
+    @media (max-width: 880px) { .test-grid { grid-template-columns: 1fr; } }
+    .test-card {
+      background: var(--white); border: 1px solid rgba(200,220,255,0.5);
+      border-radius: 20px; padding: 32px 28px;
+      box-shadow: 0 8px 32px rgba(18,79,158,0.05);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .test-card:hover { transform: translateY(-4px); box-shadow: 0 16px 48px rgba(18,79,158,0.1); }
+    .test-stars { color: #facc15; font-size: 1rem; margin-bottom: 14px; letter-spacing: 2px; }
+    .test-body { font-size: 0.92rem; color: var(--text); line-height: 1.75; margin-bottom: 22px; }
+    .test-author { display: flex; flex-direction: column; gap: 2px; padding-top: 18px; border-top: 1px solid rgba(0,0,0,0.06); }
+    .test-name { font-size: 0.92rem; font-weight: 800; color: var(--text); letter-spacing: -0.01em; }
+    .test-role { font-size: 0.8rem; color: var(--text-muted); }
+    .trust-row {
+      text-align: center; padding: 22px 30px; border-radius: 16px;
+      background: rgba(255,255,255,0.7); border: 1px solid rgba(200,220,255,0.5);
+      font-size: 0.88rem; color: var(--text-muted); font-weight: 600;
+    }
+    .trust-row strong { color: var(--blue-dark); font-weight: 800; }
+
+    /* ══════════════════════════════════════════════
+       BIG STAT (URGENCY)
+    ══════════════════════════════════════════════ */
+    #big-stat {
+      padding: 120px 0;
+      background: linear-gradient(160deg, #07101f 0%, #124F9E 50%, #07101f 100%);
+      text-align: center; position: relative; overflow: hidden;
+    }
+    #big-stat::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(71,201,243,0.1) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .big-stat-inner { position: relative; z-index: 1; }
+    .big-stat-num {
+      font-size: clamp(3.5rem, 8vw, 5.5rem); font-weight: 900; letter-spacing: -0.04em;
+      background: linear-gradient(135deg, var(--blue-light), #a8e8ff, #ffffff);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1; margin-bottom: 16px;
+    }
+    .big-stat-h {
+      font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 900; color: var(--white);
+      letter-spacing: -0.02em; line-height: 1.3; max-width: 720px; margin: 0 auto 14px;
+    }
+    .big-stat-sub {
+      font-size: 1rem; color: rgba(255,255,255,0.6); line-height: 1.75;
+      max-width: 540px; margin: 0 auto 36px;
+    }
+
+    /* ══════════════════════════════════════════════
+       FAQ
+    ══════════════════════════════════════════════ */
+    #faq { padding: 110px 0; }
+    .faq-head { text-align: center; margin-bottom: 48px; }
+    .faq-list { max-width: 780px; margin: 0 auto; display: flex; flex-direction: column; gap: 14px; }
+    .faq-item {
+      background: rgba(255,255,255,0.7); backdrop-filter: blur(10px);
+      border: 1px solid rgba(200,220,255,0.4); border-radius: 16px;
+      overflow: hidden; transition: box-shadow 0.3s, border-color 0.3s;
+    }
+    .faq-item:hover { border-color: rgba(18,79,158,0.2); }
+    .faq-q {
+      padding: 22px 26px;
+      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+      font-size: 0.98rem; font-weight: 700; color: var(--text); letter-spacing: -0.01em;
+      cursor: pointer; user-select: none; text-align: left;
+    }
+    .faq-q .faq-plus {
+      width: 28px; height: 28px; border-radius: 50%; flex-shrink: 0;
+      background: rgba(18,79,158,0.08); border: 1px solid rgba(18,79,158,0.15);
+      display: flex; align-items: center; justify-content: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .faq-plus svg { width: 12px; height: 12px; stroke: var(--blue-dark); fill: none; stroke-width: 3; stroke-linecap: round; }
+    .faq-item.open .faq-plus { transform: rotate(45deg); background: linear-gradient(135deg, var(--blue-dark), var(--blue-light)); border-color: transparent; }
+    .faq-item.open .faq-plus svg { stroke: #fff; }
+    .faq-a {
+      max-height: 0; overflow: hidden; transition: max-height 0.3s ease, padding 0.3s ease;
+      padding: 0 26px;
+    }
+    .faq-item.open .faq-a { max-height: 400px; padding: 0 26px 24px; }
+    .faq-a p { font-size: 0.92rem; color: var(--text-muted); line-height: 1.75; }
+
+    /* ══════════════════════════════════════════════
+       INTAKE FORM
+    ══════════════════════════════════════════════ */
+    #intake-form {
+      padding: 110px 0;
+      background: linear-gradient(160deg, #07101f 0%, #0d1f3c 50%, #07101f 100%);
+      position: relative; overflow: hidden;
+    }
+    #intake-form::before {
+      content: ''; position: absolute; top: 50%; left: -150px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(71,201,243,0.1) 0%, transparent 70%);
+      transform: translateY(-50%);
+    }
+    .intake-wrap { max-width: 720px; margin: 0 auto; position: relative; z-index: 1; }
+    .intake-head { text-align: center; margin-bottom: 48px; }
+    .intake-head .section-title { color: var(--white); }
+    .intake-head p { font-size: 1rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin: 14px auto 0; max-width: 560px; }
+    .intake-card {
+      background: rgba(255,255,255,0.04); border: 1px solid rgba(71,201,243,0.15);
+      border-radius: 28px; padding: 44px 40px;
+    }
+    @media (max-width: 600px) { .intake-card { padding: 32px 24px; } }
+    .form-section-label {
+      font-size: 0.68rem; font-weight: 800; letter-spacing: 0.12em;
+      text-transform: uppercase; color: rgba(71,201,243,0.7); margin-bottom: 18px;
+    }
+    .form-divider { height: 1px; background: rgba(255,255,255,0.06); margin: 28px 0; }
+    .form-group { margin-bottom: 18px; }
+    .form-group label {
+      display: block; font-size: 0.8rem; font-weight: 700;
+      color: rgba(255,255,255,0.7); margin-bottom: 7px; letter-spacing: 0.02em;
+    }
+    .form-group label .req { color: #ff6b6b; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; padding: 13px 16px; border-radius: 12px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white); font-family: inherit; font-size: 0.92rem;
+      transition: border-color 0.2s, background 0.2s; outline: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.25); }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: rgba(71,201,243,0.5); background: rgba(255,255,255,0.08);
+    }
+    .form-group select option { background: #0d1f3c; color: var(--white); }
+    .form-group textarea { resize: vertical; min-height: 90px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    @media (max-width: 500px) { .form-row { grid-template-columns: 1fr; } }
+    .form-checks { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .form-checks label {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 8px 15px; border-radius: 50px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.6);
+      cursor: pointer; transition: background 0.2s, border-color 0.2s; margin-bottom: 0;
+    }
+    .form-checks label:has(input:checked) {
+      background: rgba(71,201,243,0.15); border-color: rgba(71,201,243,0.4); color: var(--blue-light);
+    }
+    .form-checks input { display: none; }
+    .form-radios { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 4px; }
+    .form-radios label {
+      flex: 1; min-width: 90px; text-align: center; padding: 11px 14px; border-radius: 12px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.88rem; font-weight: 700; color: rgba(255,255,255,0.5);
+      cursor: pointer; transition: background 0.2s, border-color 0.2s, color 0.2s; margin-bottom: 0;
+    }
+    .form-radios label:has(input:checked) {
+      background: rgba(71,201,243,0.15); border-color: rgba(71,201,243,0.4); color: var(--blue-light);
+    }
+    .form-radios input { display: none; }
+    .form-submit {
+      width: 100%; padding: 17px; border-radius: 14px; border: none;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white); font-family: inherit; font-size: 1rem; font-weight: 800;
+      cursor: pointer; letter-spacing: 0.02em;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 20px rgba(71,201,243,0.3); margin-top: 12px;
+    }
+    .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(71,201,243,0.45); }
+    .form-submit:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
+    .form-small { text-align: center; font-size: 0.78rem; color: rgba(255,255,255,0.35); margin-top: 14px; line-height: 1.6; }
+
+    .form-success { text-align: center; padding: 30px 0; }
+    .form-success-icon {
+      width: 76px; height: 76px; border-radius: 50%; margin: 0 auto 20px;
+      background: rgba(71,201,243,0.15); border: 2px solid rgba(71,201,243,0.3);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .form-success-icon svg { width: 36px; height: 36px; stroke: var(--blue-light); fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .form-success h3 { font-size: 1.5rem; font-weight: 900; color: var(--white); margin-bottom: 12px; letter-spacing: -0.02em; }
+    .form-success p { font-size: 0.95rem; color: rgba(255,255,255,0.55); line-height: 1.7; margin-bottom: 30px; }
+
+    /* ══════════════════════════════════════════════
+       FINAL CTA
+    ══════════════════════════════════════════════ */
+    #final-cta { padding: 100px 0 60px; text-align: center; }
+    .final-title {
+      font-size: clamp(1.8rem, 4vw, 2.6rem); font-weight: 900;
+      letter-spacing: -0.03em; line-height: 1.2; max-width: 640px; margin: 16px auto 14px;
+    }
+    .final-sub { font-size: 1rem; color: var(--text-muted); max-width: 500px; margin: 0 auto 32px; line-height: 1.7; }
+    .final-ctas { display: flex; flex-direction: column; gap: 14px; align-items: center; }
+
+    /* ── Sticky Mobile Bar ── */
+    .sticky-bar {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 900;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      padding: 12px 16px;
+      box-shadow: 0 -6px 24px rgba(18,79,158,0.25);
+      align-items: center; justify-content: space-between; gap: 12px;
+    }
+    .sticky-bar-text {
+      color: var(--white); font-size: 0.82rem; font-weight: 800; line-height: 1.3;
+    }
+    .sticky-bar-text small { display: block; font-size: 0.68rem; font-weight: 600; opacity: 0.85; letter-spacing: 0.04em; }
+    .sticky-bar-btn {
+      padding: 10px 18px; border-radius: 50px; background: var(--white);
+      color: var(--blue-dark); font-family: inherit; font-size: 0.82rem; font-weight: 800;
+      border: none; cursor: pointer; white-space: nowrap; flex-shrink: 0;
+      transition: transform 0.2s;
+    }
+    .sticky-bar-btn:hover { transform: scale(1.04); }
+    @media (max-width: 820px) {
+      .sticky-bar { display: flex; }
+      #final-cta { padding-bottom: 100px; }
+    }
+
+    /* ══════════════════════════════════════════════
+       FOOTER
+    ══════════════════════════════════════════════ */
+    #footer { background: #050d1a; padding: 64px 0 32px; }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.6fr 1fr 1fr; gap: 48px;
+      padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); margin-bottom: 32px;
+    }
+    .footer-logo { width: 90px; margin-bottom: 16px; }
+    .footer-desc { font-size: 0.86rem; color: rgba(255,255,255,0.45); line-height: 1.75; max-width: 290px; }
+    .footer-contact { margin-top: 20px; display: flex; flex-direction: column; gap: 8px; }
+    .footer-contact a { font-size: 0.86rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--blue-light); }
+    .footer-h { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--white); margin-bottom: 18px; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 11px; }
+    .footer-links a { font-size: 0.86rem; color: rgba(255,255,255,0.45); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--blue-light); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-copy { font-size: 0.8rem; color: rgba(255,255,255,0.3); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.35); transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--blue-light); }
+    .socials { display: flex; gap: 10px; }
+    .social-icon {
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.08);
+      display: flex; align-items: center; justify-content: center;
+      color: rgba(255,255,255,0.5); transition: background 0.2s, color 0.2s, transform 0.2s;
+    }
+    .social-icon:hover { background: var(--blue-dark); color: var(--white); transform: translateY(-3px); }
+    .social-icon svg { width: 16px; height: 16px; fill: currentColor; }
+    @media (max-width: 720px) {
+      .footer-grid { grid-template-columns: 1fr; text-align: center; }
+      .footer-desc, .footer-logo { margin-left: auto; margin-right: auto; }
+      .footer-contact { align-items: center; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .socials { justify-content: center; }
+      .footer-legal { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- TOP PROMO BANNER -->
+<div class="top-promo promo-timed" onclick="document.querySelector('#intake-form').scrollIntoView({behavior:'smooth'})">
+  ⚡ <strong>The Website Plug for Churches</strong> — $200 custom website. Ends April 30, 2026.
+</div>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose" aria-label="Close">×</button>
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="services" onclick="closeMob()">Services</a>
+  <a href="portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="index.html#process" onclick="closeMob()">Our Process</a>
+  <a href="index.html#about" onclick="closeMob()">About</a>
+  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">Book a Free Call</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="nav-inner">
+    <a href="index.html" class="nav-logo"><img src="assets/logo-primary.png" alt="Edit Me Lo" /></a>
+    <ul class="nav-links">
+      <li><a href="services">Services</a></li>
+      <li><a href="portfolio">Portfolio</a></li>
+      <li><a href="index.html#process">Our Process</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="index.html#about">About</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn nav-book">Book a Free Call</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="anim-grad">
+  <div id="hero-beams" aria-hidden="true"></div>
+  <div class="orb" style="width:400px;height:400px;background:rgba(71,201,243,0.08);top:-100px;right:-100px;"></div>
+  <div class="orb" style="width:300px;height:300px;background:rgba(18,79,158,0.12);bottom:-80px;left:-80px;"></div>
+  <div class="container hero-inner">
+    <div class="tag tag-light">For Central Indiana Churches</div>
+    <h1 class="hero-h1">A <span class="hl">$200 website</span> for Central Indiana churches.<br />Built in 5 days. Built to bring people in.</h1>
+    <p class="hero-sub">Custom-coded, mobile-first, and designed by a local Indy team that actually gets what churches need. No templates. No $1,500+ invoices. Available through April 30 only.</p>
+    <div class="hero-ctas">
+      <div class="hero-ctas-row">
+        <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Free 15-Min Call
+        </a>
+      </div>
+      <a href="#intake-form" class="hero-secondary">Or skip the call — claim your Website Plug</a>
+    </div>
+    <div class="hero-trust">⭐ 5.0 on Google · 100+ brands launched · Indianapolis-based · 10+ years</div>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section id="problem">
+  <div class="container">
+    <div class="problem-head reveal">
+      <div class="tag">The Problem</div>
+      <h2 class="section-title">Your website might be quietly<br /><span class="gradient-text">costing you first-time visitors.</span></h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center;">After auditing dozens of church websites across Central Indiana, three problems show up again and again:</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card reveal">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <h3 class="problem-h">The site looks like 2012</h3>
+        <p class="problem-p">First-time visitors judge your church by your homepage in 3 seconds. If it looks dated, they scroll. Design credibility is now table stakes.</p>
+      </div>
+      <div class="problem-card reveal d1">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>
+        </div>
+        <h3 class="problem-h">It breaks on mobile</h3>
+        <p class="problem-p">68% of people searching for a church do it on their phone. If your site pinches, zooms, or hides service times — they leave before Sunday ever happens.</p>
+      </div>
+      <div class="problem-card reveal d2">
+        <div class="problem-icon">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <h3 class="problem-h">Service times are buried</h3>
+        <p class="problem-p">Most church sites bury service times three clicks deep. Your "Plan Your Visit" info should be the first thing a visitor sees — not a scavenger hunt.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer">
+  <div class="container">
+    <div class="offer-grid">
+      <div class="offer-left reveal">
+        <div class="tag tag-light">The Offer</div>
+        <h2 class="section-title">Meet <span style="background:linear-gradient(135deg,var(--blue-light),#a8e8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">The Website Plug.</span></h2>
+        <p>We took our normal $1,500+ custom website service, stripped it down to the essentials a church actually needs, and priced it at $200 — specifically so congregations that usually get priced out could finally have a website that works.</p>
+        <p style="color:rgba(255,255,255,0.8);font-weight:600;">No templates. No drag-and-drop builders. Custom-coded by hand. Delivered in 3–5 business days.</p>
+        <div class="offer-features">
+          <div class="offer-feat"><span class="offer-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>1–3 page fully custom-designed website</div>
+          <div class="offer-feat"><span class="offer-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Delivered in 3–5 business days</div>
+          <div class="offer-feat"><span class="offer-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fully mobile responsive</div>
+          <div class="offer-feat"><span class="offer-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Custom coded — no templates, no page builders</div>
+          <div class="offer-feat"><span class="offer-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Connected to your existing domain (or we'll help you get one)</div>
+          <div class="offer-feat"><span class="offer-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>$25/mo hosting &amp; maintenance after launch (optional)</div>
+        </div>
+      </div>
+      <div class="offer-pricing reveal d1">
+        <div class="offer-urgency"><span class="offer-urgency-dot"></span> Limited Time — Ends April 30</div>
+        <div class="offer-title-sm">The Website Plug</div>
+        <div class="offer-old">Normally $1,500+</div>
+        <div class="offer-price">$200</div>
+        <div class="offer-pay">One-time payment · paid upfront</div>
+        <div class="offer-hosting">+ $25/month hosting &amp; maintenance</div>
+        <div class="offer-cta">
+          <a href="#intake-form" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            Claim Yours — $200
+          </a>
+          <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="offer-cta-small">Or book a free call first →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="process-head reveal">
+      <div class="tag">How It Works</div>
+      <h2 class="section-title">From call to launched website<br /><span class="gradient-text">in under a week.</span></h2>
+    </div>
+    <div class="process-grid">
+      <div class="proc-step reveal">
+        <div class="proc-num"><div class="proc-num-inner">B</div></div>
+        <div class="proc-day">Day 1 · Build</div>
+        <div class="proc-title">Kickoff Call</div>
+        <p class="proc-desc">A 15-minute call. We learn about your ministry, service times, your vibe, and who you're trying to reach.</p>
+      </div>
+      <div class="proc-step reveal d1">
+        <div class="proc-num"><div class="proc-num-inner">A</div></div>
+        <div class="proc-day">Day 2 · Align</div>
+        <div class="proc-title">Sitemap &amp; Direction</div>
+        <p class="proc-desc">We turn your inputs into a simple sitemap and design direction. You approve it before we write a line of code.</p>
+      </div>
+      <div class="proc-step reveal d2">
+        <div class="proc-num"><div class="proc-num-inner">L</div></div>
+        <div class="proc-day">Days 3–4 · Look</div>
+        <div class="proc-title">Design &amp; Build</div>
+        <p class="proc-desc">We design and code your site. You get a preview link and one round of revisions.</p>
+      </div>
+      <div class="proc-step reveal d3">
+        <div class="proc-num"><div class="proc-num-inner">L</div></div>
+        <div class="proc-day">Day 5 · Launch</div>
+        <div class="proc-title">Go Live</div>
+        <p class="proc-desc">We go live. Your new site is connected to your domain, mobile-ready, and ready for Sunday.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials">
+  <div class="container">
+    <div class="test-head reveal">
+      <div class="tag">Social Proof</div>
+      <h2 class="section-title">Real Indy businesses.<br /><span class="gradient-text">Real results.</span></h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center;">We haven't worked with a church yet — which is exactly why this promo exists. Here's what other Indy clients say about working with us:</p>
+    </div>
+    <div class="test-grid">
+      <div class="test-card reveal">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-body">"Our website is exactly what we needed — clean, fast, and it actually brings in leads. Lauren coded everything from scratch and it shows. No templates, no compromises. Our clients always comment on how polished our online presence looks now."</p>
+        <div class="test-author">
+          <div class="test-name">David Torres</div>
+          <div class="test-role">Torres Consulting</div>
+        </div>
+      </div>
+      <div class="test-card reveal d1">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-body">"I enjoyed working with Edit Me Lo and I couldn't be happier with the results. The team was professional, detail-oriented, and truly understood my vision. Delivered high-quality work on time and exceeded my expectations."</p>
+        <div class="test-author">
+          <div class="test-name">Courtney Hunt</div>
+          <div class="test-role">Ambassadors of Hope</div>
+        </div>
+      </div>
+      <div class="test-card reveal d2">
+        <div class="test-stars">★★★★★</div>
+        <p class="test-body">"There are not enough words to describe Ms. Lauren. She is beyond professional. Her passion and dedication produce amazing ideas. She has completed my business logos, website, and multiple designs. You will not find another like Ms. Lauren."</p>
+        <div class="test-author">
+          <div class="test-name">Jason Mitchell</div>
+          <div class="test-role">Exalted Herbs</div>
+        </div>
+      </div>
+    </div>
+    <div class="trust-row reveal">⭐⭐⭐⭐⭐ <strong>5.0 on Google</strong> · <strong>100+ brands launched</strong> · <strong>10+ years</strong> in Indianapolis</div>
+  </div>
+</section>
+
+<!-- BIG STAT -->
+<section id="big-stat">
+  <div class="container">
+    <div class="big-stat-inner reveal">
+      <div class="big-stat-num">500+</div>
+      <h2 class="big-stat-h">Central Indiana churches don't have a modern website. Yours doesn't have to be one of them.</h2>
+      <p class="big-stat-sub">The Website Plug pricing ends April 30, 2026. After that, we're back to $1,500+.</p>
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book Your Free Call →
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="faq-head reveal">
+      <div class="tag">Got Questions?</div>
+      <h2 class="section-title">Questions pastors<br /><span class="gradient-text">always ask us.</span></h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item reveal">
+        <div class="faq-q">We don't have any website content written. Can you still help?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Yes. We'll send you a short, fill-in-the-blanks worksheet covering service times, ministries, staff intros, and your "about" story. Most churches finish it in 30 minutes. If you get stuck, we'll help you write it.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">We don't have a logo — is that a problem?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>Not at all. We can use clean typography in the meantime, or we can add a simple logo to your Website Plug build. If you want a full brand identity, we offer that separately starting at $3,000.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What if we don't like the first design?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>You get one full round of revisions included. We share a preview link before launch so nothing goes live until you approve it. Most churches love the first draft — but we want you to love it.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do you work with specific denominations or church sizes?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>We're denominationally neutral — we've designed for faith-based organizations across the board and match your tone, not ours. The Website Plug is built for churches between 50 and 800 attendees.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Can we pay monthly instead of $200 upfront?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>At this price point, we need the full $200 upfront to keep turnaround fast. For full-size brand projects ($3,000+), we offer a 50/25/25 payment split.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">Do we have to use your hosting?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>No. Our $25/mo hosting is optional and includes ongoing maintenance, security updates, and light edits. If you already have hosting you love, we'll hand over the code and help you deploy.</p></div>
+      </div>
+      <div class="faq-item reveal">
+        <div class="faq-q">What happens after April 30?<span class="faq-plus"><svg viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span></div>
+        <div class="faq-a"><p>This exact offer ends. Our standard custom website service starts at $1,500, and we'd still love to work with you — it's just a different scope. If you're on the fence, book the free call this month.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTAKE FORM -->
+<section id="intake-form">
+  <div class="container">
+    <div class="intake-wrap">
+      <div class="intake-head reveal">
+        <div class="tag tag-light" style="margin:0 auto 14px;">Claim Your Website</div>
+        <h2 class="section-title">Ready to claim your <span style="background:linear-gradient(135deg,var(--blue-light),#a8e8ff);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Website Plug?</span></h2>
+        <p>Fill this out and we'll reach out within one business day to schedule your kickoff call.</p>
+      </div>
+      <div class="intake-card reveal d1">
+        <div id="churchFormWrap">
+          <form id="churchForm">
+            <div class="form-section-label">Contact Info</div>
+            <div class="form-row">
+              <div class="form-group"><label>Full Name <span class="req">*</span></label><input type="text" name="name" required placeholder="Pastor Jane Smith" /></div>
+              <div class="form-group"><label>Phone <span class="req">*</span></label><input type="tel" name="phone" required placeholder="(555) 123-4567" /></div>
+            </div>
+            <div class="form-group"><label>Email <span class="req">*</span></label><input type="email" name="email" required placeholder="jane@yourchurch.org" /></div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Church Info</div>
+            <div class="form-row">
+              <div class="form-group"><label>Church Name <span class="req">*</span></label><input type="text" name="church" required placeholder="Grace Community Church" /></div>
+              <div class="form-group"><label>City <span class="req">*</span></label><input type="text" name="city" required placeholder="Indianapolis" /></div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label>Your Role <span class="req">*</span></label>
+                <select name="role" required>
+                  <option value="" disabled selected>Select role</option>
+                  <option>Senior Pastor</option>
+                  <option>Executive Pastor</option>
+                  <option>Communications Director</option>
+                  <option>Admin</option>
+                  <option>Other</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label>Weekly Attendance <span class="req">*</span></label>
+                <select name="attendance" required>
+                  <option value="" disabled selected>Select size</option>
+                  <option>Under 50</option>
+                  <option>50–150</option>
+                  <option>150–500</option>
+                  <option>500+</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-divider"></div>
+            <div class="form-section-label">Website Details</div>
+            <div class="form-group">
+              <label>Do you have a current website? <span class="req">*</span></label>
+              <div class="form-radios">
+                <label><input type="radio" name="hasWebsite" value="Yes" required /> Yes</label>
+                <label><input type="radio" name="hasWebsite" value="No" /> No</label>
+                <label><input type="radio" name="hasWebsite" value="Facebook-only" /> Facebook-only</label>
+              </div>
+            </div>
+            <div class="form-group"><label>Current website URL (if any)</label><input type="text" name="currentUrl" placeholder="https://yourchurch.org" /></div>
+            <div class="form-group">
+              <label>Pages you need <span class="req">*</span></label>
+              <div class="form-checks">
+                <label><input type="checkbox" name="pages" value="Home" /> Home</label>
+                <label><input type="checkbox" name="pages" value="About" /> About</label>
+                <label><input type="checkbox" name="pages" value="Plan Your Visit" /> Plan Your Visit</label>
+                <label><input type="checkbox" name="pages" value="Ministries" /> Ministries</label>
+                <label><input type="checkbox" name="pages" value="Staff" /> Staff</label>
+                <label><input type="checkbox" name="pages" value="Events" /> Events</label>
+                <label><input type="checkbox" name="pages" value="Sermons" /> Sermons</label>
+                <label><input type="checkbox" name="pages" value="Give" /> Give</label>
+                <label><input type="checkbox" name="pages" value="Contact" /> Contact</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you have a logo? <span class="req">*</span></label>
+              <div class="form-radios">
+                <label><input type="radio" name="hasLogo" value="Yes" required /> Yes</label>
+                <label><input type="radio" name="hasLogo" value="No" /> No</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <label>Do you have content written (text &amp; images)? <span class="req">*</span></label>
+              <div class="form-radios">
+                <label><input type="radio" name="contentReady" value="Yes" required /> Yes</label>
+                <label><input type="radio" name="contentReady" value="Some" /> Some</label>
+                <label><input type="radio" name="contentReady" value="No" /> No</label>
+              </div>
+            </div>
+            <div class="form-group"><label>Anything else we should know?</label><textarea name="notes" placeholder="Specific features, timeline, vision, inspiration sites…"></textarea></div>
+
+            <button type="submit" class="form-submit">Submit &amp; Claim My Website — $200</button>
+            <p class="form-small">We'll reach out within 1 business day to schedule your kickoff call and send payment details. No charges until you confirm scope.</p>
+          </form>
+        </div>
+
+        <div id="churchSuccess" class="form-success" style="display:none;">
+          <div class="form-success-icon">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>You're in! 🎉</h3>
+          <p>Lauren will reach out within 1 business day. Want to speed things up? Book your kickoff call now.</p>
+          <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            Book Your Kickoff Call
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="final-cta">
+  <div class="container">
+    <div class="reveal">
+      <div class="tag">One More Thing</div>
+      <h2 class="final-title">Your next first-time visitor is already <span class="gradient-text">Googling you.</span></h2>
+      <p class="final-sub">Let's make sure what they find is a church website worth showing up for.</p>
+      <div class="final-ctas">
+        <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book Your Free Call →
+        </a>
+        <a href="#intake-form" style="font-size:0.88rem;color:var(--text-muted);text-decoration:underline;text-underline-offset:3px;">Or claim your Website Plug — $200</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STICKY MOBILE BAR -->
+<div class="sticky-bar promo-timed">
+  <div class="sticky-bar-text">
+    $200 Website Plug
+    <small>Ends April 30</small>
+  </div>
+  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="sticky-bar-btn">Book Call</a>
+</div>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-primary.png" alt="Edit Me Lo" class="footer-logo" />
+        <p class="footer-desc">A creative agency built on bold design, smart strategy, and a genuine love for helping brands grow.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@editmelo.com">info@editmelo.com</a>
+          <a href="tel:4632801331">(463) 280-1331</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">Services</div>
+        <ul class="footer-links">
+          <li><a href="services#brand-identity">Brand Identity</a></li>
+          <li><a href="services#web-development">Web Development</a></li>
+          <li><a href="services#social-management">Social Management</a></li>
+          <li><a href="services#creative-on-demand">Creative On-Demand</a></li>
+          <li><a href="churches">For Churches</a></li>
+          <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book a Consultation</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Company</div>
+        <ul class="footer-links">
+          <li><a href="portfolio">Portfolio</a></li>
+          <li><a href="index.html#about">About Lauren</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="index.html#testimonials">Client Reviews</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="mailto:info@editmelo.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Edit Me Lo Creative Agency — All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy">Privacy Policy</a>
+        <a href="terms">Terms &amp; Conditions</a>
+      </div>
+      <div class="socials">
+        <a href="https://www.instagram.com/editmelo" target="_blank" rel="noopener" class="social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+        <a href="https://www.facebook.com/editmelollc/" target="_blank" rel="noopener" class="social-icon" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg></a>
+        <a href="https://www.tiktok.com/@edit.me.lo" target="_blank" rel="noopener" class="social-icon" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Nav scroll
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+
+  // Mobile menu
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobMenu').classList.add('open'));
+  document.getElementById('mobClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mobMenu').classList.remove('open'); }
+
+  // Scroll reveal
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(q => {
+    q.addEventListener('click', () => {
+      const item = q.parentElement;
+      const open = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(i => i.classList.remove('open'));
+      if (!open) item.classList.add('open');
+    });
+  });
+
+  // Church form submission
+  (function() {
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec';
+    var form = document.getElementById('churchForm');
+    var wrap = document.getElementById('churchFormWrap');
+    var successEl = document.getElementById('churchSuccess');
+
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.form-submit');
+      btn.disabled = true; btn.textContent = 'Submitting…';
+
+      // Validate at least one page checked
+      var pagesChecked = form.querySelectorAll('input[name="pages"]:checked');
+      if (pagesChecked.length === 0) {
+        alert('Please select at least one page for your website.');
+        btn.disabled = false; btn.textContent = 'Submit & Claim My Website — $200';
+        return;
+      }
+
+      var fd = new FormData(form);
+      var pages = fd.getAll('pages').join(', ');
+      var row = [
+        new Date().toLocaleString(),
+        'CHURCH — ' + (fd.get('name') || ''),
+        fd.get('email') || '',
+        fd.get('phone') || '',
+        fd.get('church') || '',
+        fd.get('role') || '',
+        'Church · ' + (fd.get('city') || '') + ' · Attendance: ' + (fd.get('attendance') || ''),
+        '', // pages count (N/A for churches)
+        pages,
+        fd.get('hasLogo') || '',
+        '', // colors N/A
+        fd.get('currentUrl') || '',
+        fd.get('contentReady') || '',
+        fd.get('hasWebsite') || '',
+        '', // socials N/A
+        fd.get('notes') || '',
+        'CHURCH LANDING PAGE LEAD — ' + (fd.get('church') || '') + ' (' + (fd.get('role') || '') + '). ' +
+        'Contact: ' + (fd.get('name') || '') + ', ' + (fd.get('email') || '') + ', ' + (fd.get('phone') || '') + '. ' +
+        'Location: ' + (fd.get('city') || '') + '. Attendance: ' + (fd.get('attendance') || '') + '. ' +
+        'Has website: ' + (fd.get('hasWebsite') || '') + (fd.get('currentUrl') ? ' (' + fd.get('currentUrl') + ')' : '') + '. ' +
+        'Pages needed: ' + pages + '. Has logo: ' + (fd.get('hasLogo') || '') + '. ' +
+        'Content ready: ' + (fd.get('contentReady') || '') + '. ' +
+        (fd.get('notes') ? 'Notes: ' + fd.get('notes') + '. ' : '') +
+        'This is a Website Plug Churches promo build ($200, 1-3 pages, 3-5 business day delivery).'
+      ];
+      new Image().src = SHEET_URL + '?data=' + encodeURIComponent(JSON.stringify({ row: row }));
+
+      wrap.style.display = 'none';
+      successEl.style.display = 'block';
+      window.scrollTo({ top: document.getElementById('intake-form').offsetTop - 80, behavior: 'smooth' });
+    });
+  })();
+
+  // ── Beams with Collision ──
+  (function () {
+    const hero    = document.getElementById('hero');
+    const wrapper = document.getElementById('hero-beams');
+    if (!hero || !wrapper) return;
+
+    const BEAM_COLORS = [
+      'rgba(255,255,255,0.85)', '#47C9F3', 'rgba(210,225,238,0.70)',
+      'rgba(255,255,255,0.60)', '#47C9F3', 'rgba(200,218,235,0.65)',
+      'rgba(255,255,255,0.55)',
+    ];
+    const cfgs = [
+      { px: 0.06, dur: 7,  delay: 2,  repeat: 3,   h: 56 },
+      { px: 0.18, dur: 3,  delay: 4,  repeat: 3,   h: 56 },
+      { px: 0.31, dur: 7,  delay: 0,  repeat: 7,   h: 24 },
+      { px: 0.46, dur: 5,  delay: 4,  repeat: 14,  h: 56 },
+      { px: 0.63, dur: 11, delay: 0,  repeat: 2,   h: 80 },
+      { px: 0.78, dur: 4,  delay: 0,  repeat: 2,   h: 48 },
+      { px: 0.91, dur: 6,  delay: 2,  repeat: 4,   h: 24 },
+    ];
+    cfgs.forEach((cfg, i) => {
+      cfg.color = BEAM_COLORS[i];
+      setTimeout(() => runBeam(cfg), cfg.delay * 1000);
+    });
+    function runBeam(cfg) {
+      const heroH = hero.offsetHeight, heroW = hero.offsetWidth;
+      const xPx = cfg.px * heroW;
+      const startY = -(cfg.h + 60), endY = heroH + 20, travel = endY - startY;
+      const collideAt = heroH - 52;
+      const beam = document.createElement('div');
+      beam.style.cssText = 'position:absolute;left:' + xPx + 'px;top:0;width:1.5px;height:' + cfg.h + 'px;' +
+        'background:linear-gradient(to bottom,transparent,' + cfg.color + ');border-radius:9999px;will-change:transform;';
+      wrapper.appendChild(beam);
+      const durMs = cfg.dur * 1000, t0 = performance.now();
+      let collided = false;
+      function tick(now) {
+        const frac = Math.min((now - t0) / durMs, 1);
+        const y = startY + frac * travel;
+        beam.style.transform = 'translateY(' + y + 'px)';
+        if (!collided && (y + cfg.h) >= collideAt) {
+          collided = true;
+          createExplosion(xPx, collideAt, cfg.color);
+          beam.style.transition = 'opacity 0.25s';
+          beam.style.opacity = '0';
+        }
+        if (frac < 1) requestAnimationFrame(tick);
+        else { beam.remove(); setTimeout(() => runBeam(cfg), cfg.repeat * 1000); }
+      }
+      requestAnimationFrame(tick);
+    }
+    function createExplosion(x, y, color) {
+      const host = document.createElement('div');
+      host.style.cssText = 'position:absolute;left:' + x + 'px;top:' + y + 'px;width:0;height:0;pointer-events:none;z-index:10;';
+      wrapper.appendChild(host);
+      const glow = document.createElement('div');
+      glow.style.cssText = 'position:absolute;left:-20px;top:-2px;width:40px;height:4px;' +
+        'background:linear-gradient(to right,transparent,' + color + ',transparent);' +
+        'border-radius:9999px;filter:blur(2px);animation:beamGlowFade 1.5s ease-out forwards;';
+      host.appendChild(glow);
+      const pts = Array.from({ length: 20 }, function () {
+        var el = document.createElement('div');
+        el.style.cssText = 'position:absolute;width:3px;height:3px;border-radius:50%;background:' + color + ';left:-1.5px;top:-1.5px;';
+        host.appendChild(el);
+        return { el, vx: Math.random()*80-40, vy: -(Math.random()*50+10), life: Math.random()*1.5+0.5, born: performance.now() };
+      });
+      function animPts(now) {
+        var any = false;
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i];
+          var t = (now - p.born) / (p.life * 1000);
+          if (t >= 1) continue;
+          any = true;
+          p.el.style.transform = 'translate(' + (p.vx * t) + 'px,' + (p.vy * t) + 'px)';
+          p.el.style.opacity = String(1 - t);
+        }
+        if (any) requestAnimationFrame(animPts);
+        else host.remove();
+      }
+      requestAnimationFrame(animPts);
+      setTimeout(function () { if (host.parentNode) host.remove(); }, 2500);
+    }
+  })();
+
+  // Promo expiry
+  (function() {
+    if (new Date() >= new Date('2026-05-01T00:00:00')) {
+      document.querySelectorAll('.promo-timed').forEach(function(el){ el.remove(); });
+    }
+  })();
+</script>
+<script defer src="/_vercel/insights/script.js"></script>
+
+</body>
+</html>
