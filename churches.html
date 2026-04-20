@@ -578,6 +578,71 @@
     }
 
     /* ══════════════════════════════════════════════
+       EXIT-INTENT POPUP
+    ══════════════════════════════════════════════ */
+    .exit-overlay {
+      display: none; position: fixed; inset: 0; z-index: 2500;
+      background: rgba(7,16,31,0.88); backdrop-filter: blur(14px);
+      align-items: center; justify-content: center; padding: 20px;
+      animation: exitFade 0.3s ease;
+    }
+    @keyframes exitFade { from { opacity: 0; } to { opacity: 1; } }
+    .exit-overlay.open { display: flex; }
+    .exit-modal {
+      width: 100%; max-width: 520px; position: relative;
+      background: linear-gradient(160deg, #0d1f3c 0%, #07101f 100%);
+      border: 1px solid rgba(71,201,243,0.25); border-radius: 28px;
+      padding: 44px 36px; text-align: center;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+    }
+    @media (max-width: 500px) { .exit-modal { padding: 36px 24px; } }
+    .exit-close {
+      position: absolute; top: 16px; right: 16px;
+      width: 36px; height: 36px; border-radius: 50%;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+      color: var(--white); font-size: 1.3rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .exit-close:hover { background: rgba(255,255,255,0.14); transform: scale(1.08); }
+    .exit-icon {
+      width: 64px; height: 64px; border-radius: 50%; margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(71,201,243,0.3);
+    }
+    .exit-icon svg { width: 32px; height: 32px; stroke: #fff; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .exit-modal h3 {
+      font-size: 1.5rem; font-weight: 900; color: var(--white);
+      letter-spacing: -0.02em; margin-bottom: 10px;
+    }
+    .exit-modal p {
+      font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.7;
+      margin-bottom: 26px;
+    }
+    .exit-modal p strong { color: var(--blue-light); }
+    .exit-form .form-group { text-align: left; }
+    .exit-form .form-group input {
+      width: 100%; padding: 13px 16px; border-radius: 12px;
+      background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.12);
+      color: var(--white); font-family: inherit; font-size: 0.92rem;
+      transition: border-color 0.2s, background 0.2s; outline: none;
+    }
+    .exit-form .form-group input:focus { border-color: rgba(71,201,243,0.5); background: rgba(255,255,255,0.08); }
+    .exit-form .form-group input::placeholder { color: rgba(255,255,255,0.25); }
+    .exit-submit {
+      width: 100%; padding: 16px; border-radius: 14px; border: none;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white); font-family: inherit; font-size: 0.95rem; font-weight: 800;
+      cursor: pointer; letter-spacing: 0.02em; margin-top: 8px;
+      transition: transform 0.25s, box-shadow 0.25s;
+      box-shadow: 0 4px 20px rgba(71,201,243,0.3);
+    }
+    .exit-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(71,201,243,0.45); }
+    .exit-submit:disabled { opacity: 0.5; cursor: not-allowed; }
+    .exit-small { font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 14px; }
+
+    /* ══════════════════════════════════════════════
        FOOTER
     ══════════════════════════════════════════════ */
     #footer { background: #050d1a; padding: 64px 0 32px; }
@@ -1017,6 +1082,43 @@
   <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="sticky-bar-btn">Book Call</a>
 </div>
 
+<!-- EXIT-INTENT POPUP -->
+<div class="exit-overlay promo-timed" id="exitPopup">
+  <div class="exit-modal">
+    <button class="exit-close" id="exitClose" aria-label="Close">×</button>
+    <div id="exitFormWrap">
+      <div class="exit-icon">
+        <svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+      </div>
+      <h3>Not ready yet? Grab the free checklist.</h3>
+      <p>The <strong>5-Point Church Website Audit Checklist</strong> — the same framework we use when auditing church sites in Central Indiana. Free, no spam.</p>
+      <form class="exit-form" id="exitForm">
+        <div class="form-group" style="margin-bottom:12px;">
+          <input type="text" name="firstName" required placeholder="First Name" />
+        </div>
+        <div class="form-group" style="margin-bottom:12px;">
+          <input type="email" name="email" required placeholder="Email Address" />
+        </div>
+        <div class="form-group" style="margin-bottom:8px;">
+          <input type="text" name="church" placeholder="Church Name (optional)" />
+        </div>
+        <button type="submit" class="exit-submit">Send Me the Checklist</button>
+        <p class="exit-small">Instant access. We'll also email it so you have it forever.</p>
+      </form>
+    </div>
+    <div id="exitSuccess" style="display:none;">
+      <div class="exit-icon" style="background:rgba(71,201,243,0.15);border:2px solid rgba(71,201,243,0.3);">
+        <svg viewBox="0 0 24 24" style="stroke:var(--blue-light);"><polyline points="20 6 9 17 4 12"/></svg>
+      </div>
+      <h3>You're in! 🎉</h3>
+      <p>Your checklist is ready. Open it below — or check your email for the link.</p>
+      <a href="checklist" target="_blank" rel="noopener" class="btn btn-primary" style="width:100%;justify-content:center;">
+        Open the Checklist →
+      </a>
+    </div>
+  </div>
+</div>
+
 <!-- FOOTER -->
 <footer id="footer">
   <div class="container">
@@ -1230,6 +1332,78 @@
       requestAnimationFrame(animPts);
       setTimeout(function () { if (host.parentNode) host.remove(); }, 2500);
     }
+  })();
+
+  // Exit-intent popup (desktop mouse-leave + mobile scroll-up)
+  (function() {
+    var overlay = document.getElementById('exitPopup');
+    if (!overlay) return;
+    if (sessionStorage.getItem('exitShown') || sessionStorage.getItem('exitSubmitted')) return;
+
+    var closeBtn = document.getElementById('exitClose');
+    var form = document.getElementById('exitForm');
+    var formWrap = document.getElementById('exitFormWrap');
+    var successEl = document.getElementById('exitSuccess');
+    var shown = false;
+
+    function showPopup() {
+      if (shown) return;
+      shown = true;
+      sessionStorage.setItem('exitShown', '1');
+      overlay.classList.add('open');
+    }
+    function closePopup() { overlay.classList.remove('open'); }
+
+    closeBtn.addEventListener('click', closePopup);
+    overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
+
+    // Desktop: mouse leaves through top of viewport
+    document.addEventListener('mouseleave', function(e) {
+      if (e.clientY <= 0 && !shown) showPopup();
+    });
+
+    // Mobile: show after 30 seconds OR after scrolling down then quickly scrolling back up
+    var isMobile = window.matchMedia('(max-width: 820px)').matches;
+    if (isMobile) {
+      setTimeout(showPopup, 30000);
+      var lastScroll = window.scrollY;
+      var scrolledDownAtLeast = false;
+      window.addEventListener('scroll', function() {
+        var cur = window.scrollY;
+        if (cur > 400) scrolledDownAtLeast = true;
+        if (scrolledDownAtLeast && cur < lastScroll - 60 && cur < 200 && !shown) showPopup();
+        lastScroll = cur;
+      }, { passive: true });
+    }
+
+    // Submission
+    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec';
+    form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      var btn = form.querySelector('.exit-submit');
+      btn.disabled = true; btn.textContent = 'Sending…';
+
+      var fd = new FormData(form);
+      var row = [
+        new Date().toLocaleString(),
+        'CHECKLIST LEAD — ' + (fd.get('firstName') || ''),
+        fd.get('email') || '',
+        '', // phone
+        fd.get('church') || '',
+        'Checklist Lead Magnet',
+        'Church audit checklist download',
+        '', '', '', '', '', '', '', '', '',
+        'CHURCH WEBSITE AUDIT CHECKLIST DOWNLOAD — Lead magnet captured from exit-intent popup on /churches. ' +
+        'Name: ' + (fd.get('firstName') || '') + '. Email: ' + (fd.get('email') || '') + '. ' +
+        'Church: ' + (fd.get('church') || 'Not provided') + '. ' +
+        'This lead downloaded the 5-Point Church Website Audit Checklist. Good candidate for follow-up about The Website Plug ($200 promo).'
+      ];
+      new Image().src = SHEET_URL + '?data=' + encodeURIComponent(JSON.stringify({ row: row }));
+
+      sessionStorage.setItem('exitSubmitted', '1');
+      formWrap.style.display = 'none';
+      successEl.style.display = 'block';
+    });
   })();
 
   // Promo expiry
