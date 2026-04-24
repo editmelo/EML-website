@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Find Your Creative Path — Edit Me Lo</title>
-  <meta name="description" content="Not sure which service is right for you? Take our 5-question Brand Match Quiz and get a personalized recommendation from Edit Me Lo." />
+  <title>Find Your Launch-Ready Tier — Edit Me Lo</title>
+  <meta name="description" content="Not sure which Launch-Ready tier fits you? Answer 5 quick questions and we'll match you to Tip-Off, Fast Break, or Franchise." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
   <style>
@@ -391,9 +391,9 @@
     <!-- ══ SCREEN: INTRO ══════════════════════════════ -->
     <div class="screen active" id="screen-intro">
       <div class="intro-wrap">
-        <div class="intro-hook">Not sure where to start?</div>
-        <h1 class="intro-headline">Find Your<br /><span>Creative Path</span></h1>
-        <p class="intro-sub">Answer 5 quick questions and we'll build the perfect roadmap for your brand's next level.</p>
+        <div class="intro-hook">Not sure which tier?</div>
+        <h1 class="intro-headline">Find Your<br /><span>Launch-Ready Tier</span></h1>
+        <p class="intro-sub">Answer 5 quick questions and we'll match you to the Launch-Ready tier that fits your moment — Tip-Off, Fast Break, or Franchise.</p>
         <div class="intro-steps">
           <div class="intro-step-dot"></div>
           <div class="intro-step-dot"></div>
@@ -420,7 +420,6 @@
         </div>
       </div>
 
-      <div class="question-num" id="question-num">Question 1 of 5</div>
       <div class="question-text" id="question-text"></div>
       <div class="options-list" id="options-list"></div>
 
@@ -442,8 +441,8 @@
         <div class="lead-icon">
           <svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
-        <h2 class="lead-heading">Your Match is <span>Ready.</span></h2>
-        <p class="lead-sub">Enter your details to unlock your personalized brand recommendation — we'll also send it to your inbox.</p>
+        <h2 class="lead-heading">Your Tier is <span>Ready.</span></h2>
+        <p class="lead-sub">Enter your details to unlock your Launch-Ready tier match — we'll also send it to your inbox.</p>
 
         <div class="form-group">
           <label class="form-label" for="inp-name">First Name</label>
@@ -467,15 +466,15 @@
     <!-- ══ SCREEN: RESULT ═════════════════════════════ -->
     <div class="screen" id="screen-result">
       <div id="rush-notice-wrap"></div>
-      <div class="result-eyebrow">Your Brand Match</div>
+      <div class="result-eyebrow">Your Launch-Ready Tier</div>
       <div class="result-headline" id="result-headline"></div>
       <div class="result-why" id="result-why"></div>
       <div class="result-pkg" id="result-pkg"></div>
       <div class="result-cta">
-        <p class="result-cta-sub">Ready to make it official? Book your free 15-minute consultation and lock in your spot.</p>
+        <p class="result-cta-sub">Ready to make it official? Book a Launch-Ready intro call and lock in your spot.</p>
         <a class="btn btn-book" onclick="handleBook()" href="javascript:void(0)">
           <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book My Consultation
+          Book a Launch-Ready intro call
         </a>
       </div>
     </div>
@@ -500,7 +499,7 @@
   <div class="quiz-footer">
     <a href="index.html">← Back to Edit Me Lo</a>
     &nbsp;·&nbsp;
-    <a href="services">View All Services</a>
+    <a href="the-offer">See The Offer</a>
   </div>
 
 </div><!-- /.quiz-container -->
@@ -514,103 +513,75 @@
 
   // ─────────────────────────────────────────────────────────
   //  QUESTIONS
+  //  Tiers: TIP = Tip-Off ($5K), FB = Fast Break ($6.5K), FR = Franchise ($8K)
   // ─────────────────────────────────────────────────────────
   const questions = [
     {
-      text: 'Which best describes your current business stage?',
+      text: "What's on your calendar in the next 30–90 days?",
       options: [
-        { label:'A', text:"I'm just starting out or have a 'placeholder' look.",            scores:{ BI:2, WD:0, SM:0 } },
-        { label:'B', text:"I've been around a while, but my look doesn't match my quality.", scores:{ BI:1, WD:0, SM:0 } },
-        { label:'C', text:"I have a solid brand, but I'm struggling to get noticed online.", scores:{ BI:0, WD:0, SM:2 } }
+        { label:'A', text:"One visible milestone — a launch, a pitch day, or a demo day.",            scores:{ TIP:2, FB:0, FR:0 } },
+        { label:'B', text:"A launch plus a raise — or a launch plus first hires.",                    scores:{ TIP:0, FB:2, FR:0 } },
+        { label:'C', text:"All of it — launch, fundraise, and first hires stacked close together.",   scores:{ TIP:0, FB:0, FR:3 } }
       ]
     },
     {
-      text: 'What is your #1 goal for the next 90 days?',
+      text: 'How many pages does your site actually need on day one?',
       options: [
-        { label:'A', text:'To look professional and "official" — build a brand I\'m proud of.',          scores:{ BI:3, WD:0, SM:0 } },
-        { label:'B', text:'To get a high-performing website that actually converts visitors into clients.', scores:{ BI:0, WD:3, SM:0 } },
-        { label:'C', text:'To offload my content creation so I can focus on running my business.',        scores:{ BI:0, WD:0, SM:3 } }
+        { label:'A', text:"3–4 essentials: home, about, contact, one more. That's it.",               scores:{ TIP:3, FB:0, FR:0 } },
+        { label:'B', text:"5 solid pages — room for product/pricing or press and social proof.",      scores:{ TIP:0, FB:3, FR:0 } },
+        { label:'C', text:"5 pages plus a dedicated landing page for a campaign or fundraise.",       scores:{ TIP:0, FB:0, FR:3 } }
       ]
     },
     {
-      text: 'When it comes to visual content (flyers, social posts, merch), how do you handle it?',
+      text: 'How built-out does the brand system need to be?',
       options: [
-        { label:'A', text:'I do it myself on Canva or apps — and it\'s exhausting.',               scores:{ BI:0, WD:0, SM:2 } },
-        { label:'B', text:"I don't have any — I need a professional to build it from scratch.",    scores:{ BI:1, WD:1, SM:0 } },
-        { label:'C', text:'I need high-end, custom illustrations for products or apparel.',        scores:{ BI:2, WD:0, SM:0 } }
+        { label:'A', text:"The core done right — logo, palette, typography, basic usage.",            scores:{ TIP:3, FB:0, FR:0 } },
+        { label:'B', text:"A full system — extended palette, expanded typography, wider usage.",      scores:{ TIP:0, FB:3, FR:0 } },
+        { label:'C', text:"An extended system my team and future hires can actually run with.",       scores:{ TIP:0, FB:0, FR:3 } }
       ]
     },
     {
-      text: 'What is your estimated monthly budget for growth?',
+      text: "How's your copy situation?",
       options: [
-        { label:'A', text:'Under $1,000 — one-time projects that fit my current stage.',   scores:{ BI:1, WD:0, SM:0 }, budget:'low'  },
-        { label:'B', text:'$1,500 – $3,000 — ready to invest in a serious foundation.',    scores:{ BI:1, WD:1, SM:0 }, budget:'mid'  },
-        { label:'C', text:'$5,000+ — total brand authority is the goal.',                  scores:{ BI:1, WD:0, SM:1 }, budget:'high' }
+        { label:'A', text:"I've got it — I just need the design to wrap around it.",                  scores:{ TIP:2, FB:0, FR:0 } },
+        { label:'B', text:"I've drafted most of it and can polish it myself.",                        scores:{ TIP:0, FB:2, FR:0 } },
+        { label:'C', text:"I'd love help writing the core pages.",                                    scores:{ TIP:0, FB:0, FR:3 } }
       ]
     },
     {
-      text: 'How fast do you need to see results?',
+      text: 'What budget did you plan for brand + website?',
       options: [
-        { label:'A', text:"I'm in a rush — I need something yesterday.", scores:{ BI:1, WD:0, SM:0 }, rush:true  },
-        { label:'B', text:"I'm ready to invest the next 4–8 weeks into a perfect rollout.", scores:{ BI:1, WD:1, SM:0 } }
+        { label:'A', text:"$5,000 — tight but real.",                                                 scores:{ TIP:3, FB:0, FR:0 }, tierBudget:'TIP' },
+        { label:'B', text:"$6,500 — I want the fuller package.",                                      scores:{ TIP:0, FB:3, FR:0 }, tierBudget:'FB'  },
+        { label:'C', text:"$8,000 — I want the complete engagement.",                                 scores:{ TIP:0, FB:0, FR:3 }, tierBudget:'FR'  }
       ]
     }
   ];
 
   // ─────────────────────────────────────────────────────────
-  //  RESULTS COPY
+  //  RESULTS COPY — one per tier
   // ─────────────────────────────────────────────────────────
   const RESULTS = {
-    BI: {
-      low: {
-        headline:  'Logo Development',
-        why:       "Based on your answers, you're ready to move from flying under the radar to a mark that commands instant respect. Every legendary brand starts with a powerful logo.",
-        pkg_name:  'Essential Logo Package',
-        price:     '$650',
-        note:      'One-time project · All file formats included · 2 revision rounds'
-      },
-      mid: {
-        headline:  'Starter Brand Suite',
-        why:       "Based on your answers, you're ready to move from inconsistent, DIY visuals to a full cohesive identity that builds trust and opens doors — before you say a word.",
-        pkg_name:  'The Foundation Suite',
-        price:     '$3,000',
-        note:      'Full logo system · Color palette · Typography · Brand usage standards'
-      },
-      high: {
-        headline:  'Brand Authority Suite',
-        why:       "Based on your answers, you're ready for the complete brand ecosystem — from first impression to total market domination. No shortcuts, no half-measures.",
-        pkg_name:  'The Empire',
-        price:     '$8,000',
-        note:      'Full strategy · Complete visual identity · Custom website · Launch kit · 6–8 week timeline'
-      }
+    TIP: {
+      headline:  'Tip-Off',
+      why:       "Based on your answers, you're ready to get in the game. You need a clean brand and a tight 3–4 page site — sharp enough to start pitching, focused enough to ship in 30 days.",
+      pkg_name:  'Tip-Off — Launch-Ready',
+      price:     '$5,000',
+      note:      'Core brand system · 3–4 page custom website · Strategy, 3 directions, 2 revisions · 30-day delivery · 50/50 payment terms'
     },
-    WD: {
-      low:  { headline:'The Digital Build', why:"Based on your answers, it's time to move from an outdated or non-existent online presence to a high-performance, custom-coded website built to convert. Every click should work harder for you.",          pkg_name:'Custom Website Build', price:'$1,500+', note:'Custom design & code · Mobile responsive · Hosting & performance monitoring included'  },
-      mid:  { headline:'The Digital Build', why:"Based on your answers, it's time to move from an outdated or non-existent online presence to a high-performance, custom-coded website built to convert. Every click should work harder for you.",          pkg_name:'Custom Website Build', price:'$1,500+', note:'Custom design & code · Mobile responsive · Hosting & performance monitoring included'  },
-      high: { headline:'The Digital Build', why:"Based on your answers, it's time to move from an outdated or non-existent online presence to a high-performance, custom-coded website built to convert. Every click should work harder for you.",          pkg_name:'Custom Website Build + Authority Suite', price:'$1,500+', note:'Full custom build · Pair with your Brand Authority Suite for total market domination'  }
+    FB: {
+      headline:  'Fast Break',
+      why:       "Based on your answers, it's time to pick up the pace. A full brand system plus a 5-page site gives you room for product pages, social proof, and the story behind the work — without stretching the 30-day window.",
+      pkg_name:  'Fast Break — Launch-Ready',
+      price:     '$6,500',
+      note:      'Everything in Tip-Off + full brand system · 5-page website (adds product, pricing, or press) · 30-day delivery · 50/50 payment terms'
     },
-    SM: {
-      low: {
-        headline:  'Creative On-Demand',
-        why:       "Based on your answers, you need professional-grade marketing assets without a full monthly commitment. We handle the design — you handle the business.",
-        pkg_name:  'Marketing Collateral',
-        price:     '$350+',
-        note:      'Per project · Flyers, social content, ad creatives, full campaigns & more'
-      },
-      mid: {
-        headline:  'Team Up — Freshman',
-        why:       "Based on your answers, you're ready to move from exhausting DIY social media to a fully managed presence that grows your reach while you focus on what you do best.",
-        pkg_name:  'Essential Coverage',
-        price:     '$1,600/mo',
-        note:      '12 posts + 2 reels + IG/FB stories · Social strategy · Account management'
-      },
-      high: {
-        headline:  'Team Up — Head Coach',
-        why:       "Based on your answers, you're ready for maximum social authority — premium strategy, high-frequency posting, and full account management to dominate your market.",
-        pkg_name:  'Premium Authority',
-        price:     '$2,200/mo',
-        note:      'Up to 60 posts + 8 reels · Tailored growth strategy · High-frequency management'
-      }
+    FR: {
+      headline:  'Franchise',
+      why:       "Based on your answers, you're going all-in — launching, fundraising, and hiring at the same time. The extended brand system, 5 pages plus a dedicated landing page, and copywriting support are sized for the full stretch.",
+      pkg_name:  'Franchise — Launch-Ready',
+      price:     '$8,000',
+      note:      'Everything in Fast Break + extended brand system · 5 pages + 1 campaign / fundraise landing page · Copywriting support across core pages · 30-day delivery · 50/50 payment terms'
     }
   };
 
@@ -619,7 +590,7 @@
   // ─────────────────────────────────────────────────────────
   let currentQ     = 0;
   let answers      = [];          // index of selected option per question
-  let scores       = { BI:0, WD:0, SM:0 };
+  let scores       = { TIP:0, FB:0, FR:0 };
   let selectedOpt  = null;        // currently highlighted option in render
   let quizResult   = null;        // computed result object
 
@@ -635,7 +606,7 @@
   //  QUIZ FLOW
   // ─────────────────────────────────────────────────────────
   function startQuiz() {
-    currentQ = 0; answers = []; scores = { BI:0, WD:0, SM:0 };
+    currentQ = 0; answers = []; scores = { TIP:0, FB:0, FR:0 };
     renderQuestion();
     showScreen('screen-questions');
   }
@@ -651,7 +622,6 @@
     document.getElementById('progress-fill').style.width = pct + '%';
 
     // Question text
-    document.getElementById('question-num').textContent  = `Question ${currentQ + 1} of ${questions.length}`;
     document.getElementById('question-text').textContent = q.text;
 
     // Options
@@ -693,13 +663,13 @@
     // Undo previous score for this question if re-answered
     if (answers[currentQ] !== undefined) {
       const prev = questions[currentQ].options[answers[currentQ]].scores;
-      scores.BI -= prev.BI; scores.WD -= prev.WD; scores.SM -= prev.SM;
+      scores.TIP -= prev.TIP; scores.FB -= prev.FB; scores.FR -= prev.FR;
     }
 
     // Apply new score
     answers[currentQ] = selectedOpt;
     const picked = questions[currentQ].options[selectedOpt].scores;
-    scores.BI += picked.BI; scores.WD += picked.WD; scores.SM += picked.SM;
+    scores.TIP += picked.TIP; scores.FB += picked.FB; scores.FR += picked.FR;
 
     if (currentQ < questions.length - 1) {
       currentQ++;
@@ -745,42 +715,31 @@
   //  SCORING LOGIC
   // ─────────────────────────────────────────────────────────
   function computeResult() {
-    // Winner service
-    let service;
-    if      (scores.WD > scores.BI && scores.WD > scores.SM) service = 'WD';
-    else if (scores.SM > scores.BI && scores.SM > scores.WD) service = 'SM';
-    else if (scores.SM === scores.BI && scores.SM > scores.WD) service = 'SM'; // SM tie-break
-    else                                                       service = 'BI';
+    // Winner tier — highest score wins, ties break toward the middle (FB)
+    let tier;
+    if      (scores.FR > scores.FB && scores.FR > scores.TIP) tier = 'FR';
+    else if (scores.TIP > scores.FB && scores.TIP > scores.FR) tier = 'TIP';
+    else                                                       tier = 'FB';
 
-    // Budget tier (Q4 = index 3)
-    const budgetOpt = (answers[3] !== undefined) ? questions[3].options[answers[3]] : null;
-    const budget    = budgetOpt?.budget || 'mid';
-
-    // Rush flag (Q5 = index 4)
-    const timeOpt   = (answers[4] !== undefined) ? questions[4].options[answers[4]] : null;
-    const rush      = timeOpt?.rush || false;
-
-    return { service, budget, rush };
+    return { tier };
   }
 
   // ─────────────────────────────────────────────────────────
   //  RENDER RESULT
   // ─────────────────────────────────────────────────────────
-  function renderResult({ service, budget, rush }) {
-    // Rush notice
-    document.getElementById('rush-notice-wrap').innerHTML = rush
-      ? `<div class="rush-notice"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>Rush fee may apply — we'll sort it on your call</div>`
-      : '';
+  function renderResult({ tier }) {
+    // No rush notice in the tier model
+    document.getElementById('rush-notice-wrap').innerHTML = '';
 
-    const data = RESULTS[service][budget] || RESULTS[service]['mid'];
+    const data = RESULTS[tier] || RESULTS['FB'];
 
     document.getElementById('result-headline').innerHTML =
-      `Your Brand Path: <span>${data.headline}</span>`;
+      `You're a fit for <span>${data.headline}</span>`;
 
     document.getElementById('result-why').textContent = data.why;
 
     document.getElementById('result-pkg').innerHTML = `
-      <div class="result-pkg-eyebrow">Recommended Package</div>
+      <div class="result-pkg-eyebrow">Your Launch-Ready Tier</div>
       <div class="result-pkg-name">${data.pkg_name}</div>
       <div class="result-pkg-price">${data.price}</div>
       <div class="result-pkg-note">${data.note}</div>
@@ -801,8 +760,7 @@
   // ─────────────────────────────────────────────────────────
   //  WEBHOOK
   // ─────────────────────────────────────────────────────────
-  const SERVICE_LABELS = { BI: 'Brand Identity', WD: 'Web Development', SM: 'Social Management' };
-  const BUDGET_LABELS  = { low: 'Under $1,000', mid: '$1,500 – $3,000', high: '$5,000+' };
+  const TIER_LABELS = { TIP: 'Tip-Off ($5,000)', FB: 'Fast Break ($6,500)', FR: 'Franchise ($8,000)' };
 
   async function sendWebhook(name, email, result) {
     const rd = window._resultData || {};
@@ -810,18 +768,16 @@
     const payload = {
       name,
       email,
-      recommended_service: SERVICE_LABELS[result.service] || result.service,
+      recommended_tier:    TIER_LABELS[result.tier] || result.tier,
       recommended_package: rd.pkg_name || '',
       recommended_price:   rd.price    || '',
-      budget_range:        BUDGET_LABELS[result.budget] || result.budget,
-      rush_fee_flagged:    result.rush,
-      scores: { brand_identity: scores.BI, web_development: scores.WD, social_management: scores.SM },
+      scores: { tip_off: scores.TIP, fast_break: scores.FB, franchise: scores.FR },
       answers: answers.map((a, i) => ({
         question: questions[i].text,
         answer:   questions[i].options[a]?.text || ''
       })),
       submitted_at: new Date().toISOString(),
-      source: 'Brand Match Quiz — ' + window.location.href
+      source: 'Launch-Ready Tier Match Quiz — ' + window.location.href
     };
 
     if (WEBHOOK_URL === 'YOUR_MAKE_COM_WEBHOOK_URL_HERE') {

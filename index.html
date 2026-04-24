@@ -837,9 +837,7 @@
       .socials { justify-content: center; }
     }
 
-    /* ══════════════════════════════════════════════
-       THE WEBSITE PLUG — PROMO SECTION
-    ══════════════════════════════════════════════ */
+    /* Promo section (legacy styles, unused) */
     .promo-section {
       padding: 80px 0;
       background: linear-gradient(160deg, #07101f 0%, #0d1f3c 50%, #07101f 100%);
@@ -1008,9 +1006,7 @@
       font-size: 0.75rem; color: rgba(255,255,255,0.3); margin-top: 16px;
     }
 
-    /* ══════════════════════════════════════════════
-       THE WEBSITE PLUG — POPUP
-    ══════════════════════════════════════════════ */
+    /* Popup (legacy styles, unused) */
     .plug-popup-overlay {
       display: none; position: fixed; inset: 0; z-index: 2000;
       background: rgba(7,16,31,0.85); backdrop-filter: blur(12px);
@@ -1131,28 +1127,23 @@
 </head>
 <body>
 
-<!-- TOP PROMO BANNER -->
-<div class="top-promo promo-timed" onclick="document.getElementById('plugPopup').classList.add('open')">
-  ⚡ <strong>The Website Plug</strong> — Custom website for just $200. Limited time offer. <a href="#" onclick="event.stopPropagation();document.getElementById('plugPopup').classList.add('open')">Claim yours →</a>
-</div>
-
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" id="mobClose" aria-label="Close">×</button>
-  <a href="services" onclick="closeMob()" style="font-size:1.5rem;font-weight:800;color:var(--white);">Services</a>
+  <a href="the-offer" onclick="closeMob()" style="font-size:1.5rem;font-weight:800;color:var(--white);">The Offer</a>
   <div style="display:flex;flex-direction:column;align-items:center;gap:10px;">
     <span style="font-size:0.65rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.35);">Jump to</span>
-    <a href="services#brand-identity" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Brand Identity</a>
-    <a href="services#web-development" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Web Development</a>
-    <a href="services#social-management" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Social Management</a>
-    <a href="services#creative-on-demand" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Creative On-Demand</a>
+    <a href="the-offer#tip-off" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Tip-Off — $5,000</a>
+    <a href="the-offer#fast-break" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Fast Break — $6,500</a>
+    <a href="the-offer#franchise" onclick="closeMob()" style="font-size:1rem;color:rgba(255,255,255,0.7);font-weight:700;">Franchise — $8,000</a>
   </div>
   <a href="portfolio"       onclick="closeMob()">Portfolio</a>
+  <a href="quiz.html"       onclick="closeMob()">Tier Match Quiz</a>
   <a href="#process"       onclick="closeMob()">Our Process</a>
   <a href="#testimonials"  onclick="closeMob()">Reviews</a>
   <a href="#about"         onclick="closeMob()">About</a>
   <a href="#faq"           onclick="closeMob()">FAQ</a>
-  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">Book a Consultation</a>
+  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">Book a Launch-Ready intro call</a>
 </div>
 
 <!-- NAV -->
@@ -1163,36 +1154,30 @@
     </a>
     <ul class="nav-links">
       <li class="nav-dropdown">
-        <a href="services">Services <span class="caret"></span></a>
+        <a href="the-offer">The Offer <span class="caret"></span></a>
         <div class="dropdown-menu">
-          <a href="services#brand-identity">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></span>
-            Brand Identity
+          <a href="the-offer#tip-off">
+            <span class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2v20"/></svg></span>
+            Tip-Off — $5,000
           </a>
-          <a href="services#web-development">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-            Web Development
+          <a href="the-offer#fast-break">
+            <span class="dd-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            Fast Break — $6,500
           </a>
-          <a href="services#social-management">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-            Social Management
-          </a>
-          <div class="dd-sep"></div>
-          <div class="dd-also">Also available</div>
-          <a href="services#creative-on-demand">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg></span>
-            Creative On-Demand
+          <a href="the-offer#franchise">
+            <span class="dd-icon"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55.47.98.97 1.21C12.15 18.75 13 20.24 13 22"/><path d="M14 14.66V17c0 .55-.47.98-.97 1.21C11.85 18.75 11 20.24 11 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+            Franchise — $8,000
           </a>
         </div>
       </li>
       <li><a href="portfolio">Portfolio</a></li>
+      <li><a href="quiz.html">Tier Match Quiz</a></li>
       <li><a href="#process">Our Process</a></li>
       <li><a href="#testimonials">Reviews</a></li>
-      <li><a href="#about">About</a></li>
       <li><a href="#faq">FAQ</a></li>
     </ul>
     <div class="nav-right">
-      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn nav-book">Book a Consultation</a>
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn nav-book">Book a Launch-Ready intro call</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -1214,20 +1199,20 @@
         <span>Creative Agency</span>
       </div>
       <h1 class="hero-h1">
-        Design with Purpose.<br />
-        <span class="hl">Strategy with Impact.</span>
+        Your brand, your custom website,<br />
+        <span class="hl">launch-ready in 30 days.</span>
       </h1>
       <p class="hero-p">
-        At Edit Me Lo, we fuse bold creativity with strategy to craft brands that captivate, websites that convert, and marketing that moves people.
+        Built for founders who need to look like they raised a Series A — before they have.
       </p>
       <div class="hero-actions">
         <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book a Free Consultation
+          Book a Launch-Ready intro call
         </a>
-        <a href="services" class="btn btn-glass">View All Services</a>
+        <a href="portfolio" class="btn btn-glass">See the work</a>
       </div>
-      <p class="hero-note">No pressure. Just a conversation about your goals.</p>
+      <p class="hero-note">Starting at $5,000 · 30-day delivery · 50/50 payment terms</p>
     </div>
 
     <div class="hero-right" aria-hidden="true">
@@ -1296,148 +1281,149 @@
   </div>
 </section>
 
-<!-- THE WEBSITE PLUG — PROMO -->
-<section class="promo-section promo-timed" id="websitePlug">
-  <div class="container">
-    <div class="promo-inner">
-      <div class="promo-left reveal">
-        <div class="promo-badge"><span class="promo-badge-dot"></span> Limited Time Offer — Ends April 30</div>
-        <h2 class="promo-title"><span class="plug-icon">⚡</span>The Website Plug</h2>
-        <p class="promo-subtitle">A fully custom-designed and coded website for your business — any industry, any vision — at a price that won't break the bank.</p>
-        <div class="promo-features-list">
-          <div class="promo-feat"><span class="promo-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>1–3 page custom website</div>
-          <div class="promo-feat"><span class="promo-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Delivered in 3–5 business days</div>
-          <div class="promo-feat"><span class="promo-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Fully mobile responsive</div>
-          <div class="promo-feat"><span class="promo-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>Custom coded — no templates</div>
-          <div class="promo-feat"><span class="promo-feat-check"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></span>$25/mo hosting &amp; maintenance</div>
-        </div>
-        <div class="promo-cta-wrap">
-          <button class="btn btn-primary" onclick="if(window.openPlugForm)openPlugForm();else document.getElementById('plugPopup').classList.add('open')">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-            Claim Your Website — $200
-          </button>
-        </div>
-      </div>
-      <div class="promo-right reveal d1">
-        <div class="promo-price-card">
-          <div class="promo-price-old">Normally $1,500+</div>
-          <div class="promo-price-amount">$200</div>
-          <div class="promo-price-label">One-time payment · paid upfront</div>
-          <div class="promo-price-monthly">+ $25/month hosting &amp; maintenance</div>
-          <div class="promo-deadline">Offer valid through April 30, 2026</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- SERVICES -->
 <section id="services">
   <div class="container">
     <div class="services-head reveal">
       <div class="tag">What We Do</div>
-      <h2 class="section-title">Three Services.<br /><span class="gradient-text">One Creative Team.</span></h2>
-      <p class="section-sub">Everything you need to build a brand that looks incredible and performs even better.</p>
+      <h2 class="section-title">Launch-Ready.<br /><span class="gradient-text">Brand + custom website in 30 days.</span></h2>
+      <p class="section-sub">In 30 days, you go from "I can't send anyone to this site" to a cohesive brand and a custom-built website that makes investors, hires, and early customers lean in instead of click away.</p>
     </div>
+
+    <p class="section-sub reveal" style="text-align:center;margin:-36px auto 48px;max-width:620px;font-weight:700;color:var(--dark);">Three ways to play — pick the tier that matches the game you're actually playing, not the one you wish you were playing.</p>
 
     <div class="services-grid">
 
-      <!-- Brand Identity -->
+      <!-- Tip-Off -->
       <div class="svc-card grad-border reveal">
         <div class="svc-icon-wrap">
-          <!-- Pen tool / creative icon -->
-          <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2" fill="rgba(255,255,255,0.3)"/></svg>
+          <!-- Basketball -->
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2v20"/><path d="M5 5c4 2 10 2 14 0"/><path d="M5 19c4-2 10-2 14 0"/></svg>
         </div>
-        <h3 class="svc-title">Brand Identity</h3>
-        <p class="svc-desc">For businesses ready to build — or rebuild — a visual identity that commands attention. Starting at $3,000.</p>
+        <h3 class="svc-title" style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+          <span>Tip-Off</span>
+          <span style="font-size:1.35rem;font-weight:900;background:linear-gradient(135deg,var(--blue-dark),var(--blue-light));-webkit-background-clip:text;background-clip:text;color:transparent;">$5,000</span>
+        </h3>
+        <p class="svc-desc">Get in the game. Clean brand, 3–4 page site, built for founders who need to look sharp and start pitching.</p>
         <ul class="svc-features">
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Logo development with tiered options for every stage
+            Core brand system (logo, palette, typography, basic usage)
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Full brand suites — color, typography &amp; usage guidelines
+            3–4 page custom website
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Collateral design, social kits &amp; launch-ready assets
-          </li>
-          <li>
-            <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Custom illustrations &amp; bespoke character design
+            Strategy, 3 directions, 2 revisions, launch
           </li>
         </ul>
-        <a href="services#brand-identity" class="svc-link">
-          View Pricing &amp; Packages
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
       </div>
 
-      <!-- Web Development -->
+      <!-- Fast Break -->
       <div class="svc-card grad-border reveal d1">
         <div class="svc-icon-wrap">
-          <!-- Browser / monitor icon -->
-          <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><line x1="2" y1="7" x2="22" y2="7"/><circle cx="5.5" cy="5" r="0.8" fill="rgba(255,255,255,0.6)"/><circle cx="8.5" cy="5" r="0.8" fill="rgba(255,255,255,0.6)"/></svg>
+          <!-- Lightning -->
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
         </div>
-        <h3 class="svc-title">Web Development</h3>
-        <p class="svc-desc">Custom-coded websites built for speed and conversion — not templates. For businesses that want a site that actually works. Starting at $1,500.</p>
+        <h3 class="svc-title" style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+          <span>Fast Break</span>
+          <span style="font-size:1.35rem;font-weight:900;background:linear-gradient(135deg,var(--blue-dark),var(--blue-light));-webkit-background-clip:text;background-clip:text;color:transparent;">$6,500</span>
+        </h3>
+        <p class="svc-desc">Pick up the pace. Full brand system and a 5-page site — room for product pages, social proof, and the story behind the work.</p>
         <ul class="svc-features">
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Fully custom design &amp; code — no drag-and-drop
+            Everything in Tip-Off
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Mobile responsive, fast-loading &amp; conversion-focused
+            Full brand system (extended palette, expanded typography, wider usage)
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Secure hosting &amp; performance monitoring included
-          </li>
-          <li>
-            <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Ongoing maintenance &amp; site management plans
+            5-page website (adds product, pricing, or press)
           </li>
         </ul>
-        <a href="services#web-development" class="svc-link">
-          View Pricing &amp; Packages
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
       </div>
 
-      <!-- Social Management -->
+      <!-- Franchise -->
       <div class="svc-card grad-border reveal d2">
         <div class="svc-icon-wrap">
-          <!-- Megaphone / signal icon -->
-          <svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/></svg>
+          <!-- Trophy -->
+          <svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55.47.98.97 1.21C12.15 18.75 13 20.24 13 22"/><path d="M14 14.66V17c0 .55-.47.98-.97 1.21C11.85 18.75 11 20.24 11 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg>
         </div>
-        <h3 class="svc-title">Social Management</h3>
-        <p class="svc-desc">Done-for-you social media management for brands that want to stay consistent and grow online. Starting at $1,600/mo.</p>
+        <h3 class="svc-title" style="display:flex;align-items:baseline;justify-content:space-between;gap:10px;flex-wrap:wrap;">
+          <span>Franchise</span>
+          <span style="font-size:1.35rem;font-weight:900;background:linear-gradient(135deg,var(--blue-dark),var(--blue-light));-webkit-background-clip:text;background-clip:text;color:transparent;">$8,000</span>
+        </h3>
+        <p class="svc-desc">Go all-in. Extended brand + 5 pages + a dedicated landing page + copywriting support — for founders launching, fundraising, and hiring at the same time.</p>
         <ul class="svc-features">
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Team Up monthly retainers — 4 tiers to match your goals
+            Everything in Fast Break
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Content creation, scheduling &amp; community management
+            Extended brand system
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Platform-specific strategy tailored to your audience
+            5 pages + 1 campaign / fundraise landing page
           </li>
           <li>
             <div class="svc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
-            Monthly performance reporting &amp; analytics review
+            Copywriting support across core pages
           </li>
         </ul>
-        <a href="services#social-management" class="svc-link">
-          View Pricing &amp; Packages
-          <svg viewBox="0 0 24 24"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
       </div>
 
+    </div>
+
+    <div class="reveal" style="text-align:center;margin-top:56px;">
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Launch-Ready intro call
+      </a>
+      <p style="font-size:0.82rem;color:var(--text-muted);margin-top:14px;">All tiers · 30-day delivery · 50/50 payment terms · Yours to own on day one</p>
+    </div>
+  </div>
+</section>
+
+<!-- WHO THIS IS FOR -->
+<section id="who-this-is-for" style="padding:40px 0 80px;">
+  <div class="container">
+    <div class="services-head reveal">
+      <div class="tag">Who This Is For</div>
+      <h2 class="section-title">Built for founders<br /><span class="gradient-text">preparing to launch.</span></h2>
+      <p class="section-sub">This is for you if:</p>
+    </div>
+
+    <div class="reveal" style="max-width:720px;margin:0 auto;">
+      <ul class="svc-features" style="gap:16px;margin-bottom:32px;">
+        <li style="font-size:0.95rem;line-height:1.6;color:var(--dark);align-items:flex-start;">
+          <div class="svc-check" style="margin-top:3px;"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          You're 1–3 people, pre-launch or in your first year.
+        </li>
+        <li style="font-size:0.95rem;line-height:1.6;color:var(--dark);align-items:flex-start;">
+          <div class="svc-check" style="margin-top:3px;"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          You have something real on the calendar — a launch, a raise, your first key hires.
+        </li>
+        <li style="font-size:0.95rem;line-height:1.6;color:var(--dark);align-items:flex-start;">
+          <div class="svc-check" style="margin-top:3px;"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          $5–10K for brand + web is a planned line item, not a stretch.
+        </li>
+        <li style="font-size:0.95rem;line-height:1.6;color:var(--dark);align-items:flex-start;">
+          <div class="svc-check" style="margin-top:3px;"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          You're staring at a Squarespace draft, a Canva logo, or nothing at all — and you know it won't hold up when investors, candidates, or early customers actually look.
+        </li>
+        <li style="font-size:0.95rem;line-height:1.6;color:var(--dark);align-items:flex-start;">
+          <div class="svc-check" style="margin-top:3px;"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></div>
+          You don't have three months for an agency engagement, and you're done losing weekends to DIY.
+        </li>
+      </ul>
+      <p style="font-size:0.95rem;line-height:1.7;color:var(--text-muted);text-align:center;">You're probably building in SaaS, consumer, professional services, health, or the creator economy. You can explain your business in two sentences. You make decisions yourself.</p>
     </div>
   </div>
 </section>
@@ -1451,11 +1437,11 @@
       </div>
       <div class="quiz-promo-body">
         <div class="tag" style="margin-bottom:8px;">Free Tool</div>
-        <h2 class="quiz-promo-title">Not Sure Which Service Is Right for You?</h2>
-        <p class="quiz-promo-sub">Answer 5 quick questions and we'll match you with the perfect service for where your brand is right now — no guessing, no pressure.</p>
+        <h2 class="quiz-promo-title">Not Sure Which Tier Is Best for You?</h2>
+        <p class="quiz-promo-sub">Answer 5 quick questions and we'll match you to Tip-Off, Fast Break, or Franchise — the Launch-Ready tier that fits your moment.</p>
       </div>
       <a href="quiz.html" class="btn btn-primary" style="padding:15px 32px;font-size:0.95rem;white-space:nowrap;flex-shrink:0;">
-        Take the Brand Match Quiz
+        Take the Tier Match Quiz
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="M12 5l7 7-7 7"/></svg>
       </a>
     </div>
@@ -1847,15 +1833,14 @@
         </div>
       </div>
       <div>
-        <div class="footer-h">Services</div>
+        <div class="footer-h">The Offer</div>
         <ul class="footer-links">
-          <li><a href="services#brand-identity">Brand Identity</a></li>
-          <li><a href="services#web-development">Web Development</a></li>
-          <li><a href="services#social-management">Social Management</a></li>
-          <li><a href="services#creative-on-demand">Creative On-Demand</a></li>
-          <li><a href="churches">For Churches</a></li>
-          <li><a href="quiz.html">Brand Match Quiz</a></li>
-          <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book a Consultation</a></li>
+          <li><a href="the-offer">Launch-Ready</a></li>
+          <li><a href="the-offer#tip-off">Tip-Off — $5,000</a></li>
+          <li><a href="the-offer#fast-break">Fast Break — $6,500</a></li>
+          <li><a href="the-offer#franchise">Franchise — $8,000</a></li>
+          <li><a href="quiz.html">Tier Match Quiz</a></li>
+          <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book An Intro Call</a></li>
         </ul>
       </div>
       <div>
@@ -1901,170 +1886,6 @@
     </div>
   </div>
 </footer>
-
-<!-- THE WEBSITE PLUG — POPUP -->
-<div class="plug-popup-overlay promo-timed" id="plugPopup">
-  <div class="plug-popup">
-    <button class="plug-popup-close" aria-label="Close">×</button>
-
-    <!-- Teaser screen -->
-    <div id="plugTeaser" class="plug-teaser">
-      <div class="promo-badge" style="margin:0 auto 12px;"><span class="promo-badge-dot"></span> Limited Time Offer</div>
-      <h3>⚡ The Website Plug</h3>
-      <div class="plug-teaser-old">Normally $1,500+</div>
-      <div class="plug-teaser-price">$200</div>
-      <p>Get a fully custom-designed &amp; coded website for your business — any industry, any vision.</p>
-      <div class="plug-teaser-features">
-        <span class="plug-teaser-feat">1–3 Pages</span>
-        <span class="plug-teaser-feat">3–5 Days</span>
-        <span class="plug-teaser-feat">Custom Coded</span>
-        <span class="plug-teaser-feat">Mobile Ready</span>
-        <span class="plug-teaser-feat">$25/mo Hosting</span>
-      </div>
-      <button class="plug-teaser-cta" id="plugShowForm">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        I Want This — Let's Go
-      </button>
-      <button class="plug-teaser-skip" onclick="document.getElementById('plugPopup').classList.remove('open');sessionStorage.setItem('plugDismissed','1');">No thanks, maybe later</button>
-      <div class="plug-teaser-deadline">Offer ends April 30, 2026 · Paid upfront</div>
-    </div>
-
-    <!-- Form screen (hidden initially) -->
-    <div id="plugFormInner" style="display:none;">
-      <div class="plug-popup-header">
-        <div class="promo-badge" style="margin:0 auto 12px;"><span class="promo-badge-dot"></span> Limited Time — Ends April 30</div>
-        <h3>⚡ The Website Plug</h3>
-        <p>Custom website for just <strong style="color:var(--blue-light);">$200</strong>. Fill out the details below and we'll get started.</p>
-      </div>
-
-      <form id="plugForm">
-        <div class="plug-form-section-label">Contact Info</div>
-        <div class="plug-form-row">
-          <div class="plug-form-group">
-            <label>Full Name <span class="req">*</span></label>
-            <input type="text" name="name" required placeholder="Jane Smith" />
-          </div>
-          <div class="plug-form-group">
-            <label>Phone Number <span class="req">*</span></label>
-            <input type="tel" name="phone" required placeholder="(555) 123-4567" />
-          </div>
-        </div>
-        <div class="plug-form-group">
-          <label>Email Address <span class="req">*</span></label>
-          <input type="email" name="email" required placeholder="jane@mybusiness.com" />
-        </div>
-
-        <div class="plug-form-divider"></div>
-        <div class="plug-form-section-label">Business Info</div>
-        <div class="plug-form-row">
-          <div class="plug-form-group">
-            <label>Business Name <span class="req">*</span></label>
-            <input type="text" name="business" required placeholder="Jane's Bakery" />
-          </div>
-          <div class="plug-form-group">
-            <label>Industry <span class="req">*</span></label>
-            <select name="industry" required>
-              <option value="" disabled selected>Select industry</option>
-              <option>Restaurant / Food & Beverage</option>
-              <option>Beauty / Salon / Barbershop</option>
-              <option>Fitness / Wellness</option>
-              <option>Real Estate</option>
-              <option>Construction / Home Services</option>
-              <option>Retail / E-commerce</option>
-              <option>Photography / Videography</option>
-              <option>Music / Entertainment</option>
-              <option>Healthcare / Medical</option>
-              <option>Legal / Consulting</option>
-              <option>Automotive</option>
-              <option>Education / Coaching</option>
-              <option>Nonprofit</option>
-              <option>Tech / SaaS</option>
-              <option>Other</option>
-            </select>
-          </div>
-        </div>
-        <div class="plug-form-group">
-          <label>Brief description of your business <span class="req">*</span></label>
-          <textarea name="description" required placeholder="Tell us what your business does, who you serve, and what makes you unique…"></textarea>
-        </div>
-
-        <div class="plug-form-divider"></div>
-        <div class="plug-form-section-label">Website Details</div>
-        <div class="plug-form-group">
-          <label>How many pages? <span class="req">*</span></label>
-          <div class="plug-form-radios">
-            <label><input type="radio" name="pages" value="1" required /> 1 Page</label>
-            <label><input type="radio" name="pages" value="2" /> 2 Pages</label>
-            <label><input type="radio" name="pages" value="3" /> 3 Pages</label>
-          </div>
-        </div>
-        <div class="plug-form-group">
-          <label>Which pages do you need?</label>
-          <div class="plug-form-checks">
-            <label><input type="checkbox" name="pagesNeeded" value="Home" /> Home</label>
-            <label><input type="checkbox" name="pagesNeeded" value="About" /> About</label>
-            <label><input type="checkbox" name="pagesNeeded" value="Services" /> Services</label>
-            <label><input type="checkbox" name="pagesNeeded" value="Contact" /> Contact</label>
-            <label><input type="checkbox" name="pagesNeeded" value="Portfolio" /> Portfolio</label>
-            <label><input type="checkbox" name="pagesNeeded" value="Menu/Pricing" /> Menu/Pricing</label>
-            <label><input type="checkbox" name="pagesNeeded" value="Booking" /> Booking</label>
-          </div>
-        </div>
-        <div class="plug-form-group">
-          <label>Do you have a logo? <span class="req">*</span></label>
-          <div class="plug-form-radios">
-            <label><input type="radio" name="hasLogo" value="Yes" required /> Yes</label>
-            <label><input type="radio" name="hasLogo" value="No" /> No</label>
-          </div>
-        </div>
-        <div class="plug-form-group">
-          <label>Brand colors (if any)</label>
-          <input type="text" name="colors" placeholder="e.g. Navy blue, gold, white" />
-        </div>
-        <div class="plug-form-group">
-          <label>Any websites you like for inspiration?</label>
-          <textarea name="references" rows="2" placeholder="Paste URLs of sites you like the look of…"></textarea>
-        </div>
-        <div class="plug-form-group">
-          <label>Do you have content ready (text &amp; images)? <span class="req">*</span></label>
-          <div class="plug-form-radios">
-            <label><input type="radio" name="contentReady" value="Yes" required /> Yes</label>
-            <label><input type="radio" name="contentReady" value="Some" /> Some</label>
-            <label><input type="radio" name="contentReady" value="No" /> No</label>
-          </div>
-        </div>
-        <div class="plug-form-group">
-          <label>Existing website URL (if any)</label>
-          <input type="text" name="existingUrl" placeholder="https://yourbusiness.com" />
-        </div>
-        <div class="plug-form-group">
-          <label>Social media links</label>
-          <textarea name="socials" rows="2" placeholder="Instagram, Facebook, TikTok URLs…"></textarea>
-        </div>
-        <div class="plug-form-group">
-          <label>Any special requests or features?</label>
-          <textarea name="special" rows="2" placeholder="Contact form, gallery, animations, specific layout ideas…"></textarea>
-        </div>
-
-        <button type="submit" class="plug-submit">Submit &amp; Claim Your Website — $200</button>
-        <p style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.3);margin-top:12px;">Payment required upfront to lock in your spot.</p>
-      </form>
-    </div>
-
-    <div id="plugSuccess" class="plug-success" style="display:none;">
-      <div class="plug-success-icon">
-        <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
-      <h3>You're In! 🎉</h3>
-      <p>Your Website Plug request has been received. Next step: schedule your kickoff call so we can get rolling.</p>
-      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="padding:16px 36px;font-size:1rem;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Schedule Your Kickoff Call
-      </a>
-    </div>
-
-  </div>
-</div>
 
 <script>
   // Navbar scroll
@@ -2228,128 +2049,6 @@
       requestAnimationFrame(animPts);
       setTimeout(function () { if (host.parentNode) host.remove(); }, 2500);
     }
-  })();
-  // ── The Website Plug: Popup + Form + Expiry ──
-  (function() {
-    var EXPIRY = new Date('2026-05-01T00:00:00');
-    if (new Date() >= EXPIRY) {
-      document.querySelectorAll('.promo-timed').forEach(function(el){ el.remove(); });
-      return;
-    }
-
-    var overlay = document.getElementById('plugPopup');
-    if (!overlay) return;
-    var closeBtn = overlay.querySelector('.plug-popup-close');
-    var form = document.getElementById('plugForm');
-    var successEl = document.getElementById('plugSuccess');
-    var formEl = document.getElementById('plugFormInner');
-
-    // Show popup after 3 seconds if not dismissed this session
-    if (!sessionStorage.getItem('plugDismissed')) {
-      setTimeout(function() {
-        overlay.classList.add('open');
-      }, 3000);
-    }
-
-    function closePopup() {
-      overlay.classList.remove('open');
-      sessionStorage.setItem('plugDismissed', '1');
-      // Reset to teaser for next open
-      var teaser = document.getElementById('plugTeaser');
-      if (teaser) teaser.style.display = '';
-      if (formEl) formEl.style.display = 'none';
-    }
-    closeBtn.addEventListener('click', closePopup);
-    overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
-
-    // Teaser → Form transition
-    var showFormBtn = document.getElementById('plugShowForm');
-    if (showFormBtn) {
-      showFormBtn.addEventListener('click', function() {
-        document.getElementById('plugTeaser').style.display = 'none';
-        formEl.style.display = '';
-      });
-    }
-
-    // Also allow CTA buttons to go straight to form
-    window.openPlugForm = function() {
-      var teaser = document.getElementById('plugTeaser');
-      if (teaser) teaser.style.display = 'none';
-      if (formEl) formEl.style.display = '';
-      overlay.classList.add('open');
-    };
-
-    // Google Sheets submission
-    // SETUP: Replace this URL with your Google Apps Script web app URL
-    // Instructions:
-    // 1. Create a Google Sheet with these column headers in row 1:
-    //    Timestamp | Name | Email | Phone | Business Name | Industry | Description | Pages | Pages Needed | Has Logo | Brand Colors | Reference Sites | Content Ready | Existing URL | Social Links | Special Requests | Generated Prompt
-    // 2. Go to Extensions > Apps Script
-    // 3. Paste this code:
-    //    function doPost(e) {
-    //      var sheet = SpreadsheetApp.getActiveSpreadsheet().getActiveSheet();
-    //      var data = JSON.parse(e.postData.contents);
-    //      sheet.appendRow(data.row);
-    //      return ContentService.createTextOutput('OK');
-    //    }
-    // 4. Click Deploy > New Deployment > Web App > Anyone can access > Deploy
-    // 5. Copy the URL and paste it below
-    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec';
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = form.querySelector('.plug-submit');
-      btn.disabled = true;
-      btn.textContent = 'Submitting…';
-
-      var fd = new FormData(form);
-      var name = fd.get('name') || '';
-      var email = fd.get('email') || '';
-      var phone = fd.get('phone') || '';
-      var biz = fd.get('business') || '';
-      var industry = fd.get('industry') || '';
-      var desc = fd.get('description') || '';
-      var pages = fd.get('pages') || '';
-      var pagesNeeded = fd.getAll('pagesNeeded').join(', ');
-      var hasLogo = fd.get('hasLogo') || '';
-      var colors = fd.get('colors') || '';
-      var refs = fd.get('references') || '';
-      var content = fd.get('contentReady') || '';
-      var existing = fd.get('existingUrl') || '';
-      var socials = fd.get('socials') || '';
-      var special = fd.get('special') || '';
-
-      // Generate prompt for Claude
-      var prompt = 'Build a ' + pages + '-page website for "' + biz + '", a ' + industry + ' business. ';
-      prompt += 'Description: ' + desc + '. ';
-      prompt += 'Pages needed: ' + (pagesNeeded || 'Home') + '. ';
-      if (hasLogo === 'Yes') prompt += 'They have a logo (ask client for file). ';
-      else prompt += 'They do NOT have a logo — create a simple text-based logo. ';
-      if (colors) prompt += 'Brand colors: ' + colors + '. ';
-      else prompt += 'No specific brand colors — choose a professional palette fitting the industry. ';
-      if (refs) prompt += 'Reference/inspiration sites: ' + refs + '. ';
-      if (content === 'Yes') prompt += 'Client has content ready (copy + images). ';
-      else if (content === 'Some') prompt += 'Client has some content — supplement with professional placeholder copy. ';
-      else prompt += 'Client has NO content — write all copy and use placeholder images. ';
-      if (existing) prompt += 'Existing website: ' + existing + ' — review for context. ';
-      if (socials) prompt += 'Social media links to include: ' + socials + '. ';
-      if (special) prompt += 'Special requests: ' + special + '. ';
-      prompt += 'Contact: ' + name + ', ' + email + ', ' + phone + '. ';
-      prompt += 'This is a Website Plug promo build ($200, 1-3 pages, 3-5 business day delivery).';
-
-      var row = [
-        new Date().toLocaleString(),
-        name, email, phone, biz, industry, desc, pages, pagesNeeded,
-        hasLogo, colors, refs, content, existing, socials, special, prompt
-      ];
-
-      // Submit to Google Sheets via image GET (cannot be blocked by CORS)
-      new Image().src = SHEET_URL + '?data=' + encodeURIComponent(JSON.stringify({ row: row }));
-
-      // Show success
-      formEl.style.display = 'none';
-      successEl.style.display = 'block';
-    });
   })();
 </script>
 <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>

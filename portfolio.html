@@ -466,22 +466,17 @@
 </head>
 <body>
 
-<!-- TOP PROMO BANNER -->
-<div class="top-promo promo-timed" onclick="window.location.href='/'">
-  ⚡ <strong>The Website Plug</strong> — Custom website for just $200. Limited time offer. <a href="/" onclick="event.stopPropagation();">Claim yours →</a>
-</div>
-
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
   <button class="mob-close" id="mobClose" aria-label="Close">×</button>
   <a href="index.html" onclick="closeMob()">Home</a>
-  <a href="services" onclick="closeMob()">Services</a>
+  <a href="the-offer" onclick="closeMob()">The Offer</a>
   <a href="portfolio" onclick="closeMob()" style="color:var(--blue-light);">Portfolio</a>
+  <a href="quiz.html" onclick="closeMob()">Tier Match Quiz</a>
   <a href="index.html#process" onclick="closeMob()">Our Process</a>
   <a href="index.html#testimonials" onclick="closeMob()">Reviews</a>
-  <a href="index.html#about" onclick="closeMob()">About</a>
   <a href="index.html#faq" onclick="closeMob()">FAQ</a>
-  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">Book a Consultation</a>
+  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">Book a Launch-Ready intro call</a>
 </div>
 
 <!-- NAV -->
@@ -490,36 +485,30 @@
     <a href="index.html" class="nav-logo"><img src="assets/logo-primary.png" alt="Edit Me Lo" /></a>
     <ul class="nav-links">
       <li class="nav-dropdown">
-        <a href="services">Services <span class="caret"></span></a>
+        <a href="the-offer">The Offer <span class="caret"></span></a>
         <div class="dropdown-menu">
-          <a href="services#brand-identity">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg></span>
-            Brand Identity
+          <a href="the-offer#tip-off">
+            <span class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2v20"/></svg></span>
+            Tip-Off — $5,000
           </a>
-          <a href="services#web-development">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></span>
-            Web Development
+          <a href="the-offer#fast-break">
+            <span class="dd-icon"><svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+            Fast Break — $6,500
           </a>
-          <a href="services#social-management">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></svg></span>
-            Social Management
-          </a>
-          <div class="dd-sep"></div>
-          <div class="dd-also">Also available</div>
-          <a href="services#creative-on-demand">
-            <span class="dd-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg></span>
-            Creative On-Demand
+          <a href="the-offer#franchise">
+            <span class="dd-icon"><svg viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55.47.98.97 1.21C12.15 18.75 13 20.24 13 22"/><path d="M14 14.66V17c0 .55-.47.98-.97 1.21C11.85 18.75 11 20.24 11 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></span>
+            Franchise — $8,000
           </a>
         </div>
       </li>
       <li><a href="portfolio">Portfolio</a></li>
+      <li><a href="quiz.html">Tier Match Quiz</a></li>
       <li><a href="index.html#process">Our Process</a></li>
       <li><a href="index.html#testimonials">Reviews</a></li>
-      <li><a href="index.html#about">About</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
     </ul>
     <div class="nav-right">
-      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn nav-book">Book a Consultation</a>
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn nav-book">Book a Launch-Ready intro call</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
       <span></span><span></span><span></span>
@@ -673,9 +662,9 @@
       <div class="cta-actions">
         <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-          Book a Free Consultation
+          Book a Launch-Ready intro call
         </a>
-        <a href="services" class="btn btn-glass">View All Services</a>
+        <a href="the-offer" class="btn btn-glass">See The Offer</a>
       </div>
     </div>
   </div>
@@ -694,15 +683,14 @@
         </div>
       </div>
       <div>
-        <div class="footer-h">Services</div>
+        <div class="footer-h">The Offer</div>
         <ul class="footer-links">
-          <li><a href="services#brand-identity">Brand Identity</a></li>
-          <li><a href="services#web-development">Web Development</a></li>
-          <li><a href="services#social-management">Social Management</a></li>
-          <li><a href="services#creative-on-demand">Creative On-Demand</a></li>
-          <li><a href="churches">For Churches</a></li>
-          <li><a href="quiz">Brand Match Quiz</a></li>
-          <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book a Consultation</a></li>
+          <li><a href="the-offer">Launch-Ready</a></li>
+          <li><a href="the-offer#tip-off">Tip-Off — $5,000</a></li>
+          <li><a href="the-offer#fast-break">Fast Break — $6,500</a></li>
+          <li><a href="the-offer#franchise">Franchise — $8,000</a></li>
+          <li><a href="quiz.html">Tier Match Quiz</a></li>
+          <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book An Intro Call</a></li>
         </ul>
       </div>
       <div>

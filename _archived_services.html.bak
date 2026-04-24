@@ -502,7 +502,7 @@
     .dd-sep { height: 1px; background: rgba(0,0,0,0.08); margin: 4px 8px; }
     .dd-also { padding: 6px 14px 2px; font-size: 0.62rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--text-muted); }
 
-    /* ── Website Plug Promo Banner ── */
+    /* ── Promo Banner ── */
     .plug-banner {
       margin-top: 48px; padding: 36px 32px; border-radius: 24px;
       background: linear-gradient(135deg, rgba(255,59,48,0.08) 0%, rgba(71,201,243,0.08) 100%);
@@ -689,11 +689,6 @@
   </style>
 </head>
 <body>
-
-<!-- TOP PROMO BANNER -->
-<div class="top-promo promo-timed" onclick="document.getElementById('plugPopup').classList.add('open')">
-  ⚡ <strong>The Website Plug</strong> — Custom website for just $200. Limited time offer. <a href="#" onclick="event.stopPropagation();document.getElementById('plugPopup').classList.add('open')">Claim yours →</a>
-</div>
 
 <!-- MOBILE MENU -->
 <div class="mob-menu" id="mobMenu">
@@ -954,18 +949,6 @@
       </div>
     </div>
 
-    <!-- Website Plug Promo Banner -->
-    <div class="plug-banner promo-timed reveal" style="margin-top:48px;">
-      <div class="plug-banner-badge"><span class="plug-banner-dot"></span> Limited Time Offer</div>
-      <h3>⚡ The Website Plug</h3>
-      <p>Need a website without the premium price tag? Get a fully custom-designed &amp; coded site — any industry.</p>
-      <div><span class="plug-price-old">$1,500+</span><span class="plug-price">$200</span></div>
-      <div class="plug-details">1–3 pages · 3–5 business days · $25/mo hosting · Paid upfront · Ends April 30</div>
-      <button class="btn btn-primary" onclick="if(window.openPlugForm)openPlugForm();else document.getElementById('plugPopup').classList.add('open')" style="margin:0 auto;padding:14px 36px;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        Claim Your Website — $200
-      </button>
-    </div>
 
   </div>
 </section>
@@ -1226,7 +1209,6 @@
           <li><a href="#web-development">Web Development</a></li>
           <li><a href="#social-management">Social Management</a></li>
           <li><a href="#creative-on-demand">Creative On-Demand</a></li>
-          <li><a href="churches">For Churches</a></li>
           <li><a href="quiz.html">Brand Match Quiz</a></li>
           <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book a Consultation</a></li>
         </ul>
@@ -1268,83 +1250,6 @@
     </div>
   </div>
 </footer>
-
-<!-- THE WEBSITE PLUG — POPUP -->
-<div class="plug-popup-overlay promo-timed" id="plugPopup">
-  <div class="plug-popup">
-    <button class="plug-popup-close" aria-label="Close">×</button>
-
-    <!-- Teaser screen -->
-    <div id="plugTeaser" class="plug-teaser">
-      <div class="promo-badge" style="margin:0 auto 12px;"><span class="promo-badge-dot"></span> Limited Time Offer</div>
-      <h3>⚡ The Website Plug</h3>
-      <div class="plug-teaser-old">Normally $1,500+</div>
-      <div class="plug-teaser-price">$200</div>
-      <p>Get a fully custom-designed &amp; coded website for your business — any industry, any vision.</p>
-      <div class="plug-teaser-features">
-        <span class="plug-teaser-feat">1–3 Pages</span>
-        <span class="plug-teaser-feat">3–5 Days</span>
-        <span class="plug-teaser-feat">Custom Coded</span>
-        <span class="plug-teaser-feat">Mobile Ready</span>
-        <span class="plug-teaser-feat">$25/mo Hosting</span>
-      </div>
-      <button class="plug-teaser-cta" id="plugShowForm">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
-        I Want This — Let's Go
-      </button>
-      <button class="plug-teaser-skip" onclick="document.getElementById('plugPopup').classList.remove('open');sessionStorage.setItem('plugDismissed','1');">No thanks, maybe later</button>
-      <div class="plug-teaser-deadline">Offer ends April 30, 2026 · Paid upfront</div>
-    </div>
-
-    <!-- Form screen (hidden initially) -->
-    <div id="plugFormInner" style="display:none;">
-      <div class="plug-popup-header">
-        <div class="promo-badge" style="margin:0 auto 12px;"><span class="promo-badge-dot"></span> Limited Time — Ends April 30</div>
-        <h3>⚡ The Website Plug</h3>
-        <p>Custom website for just <strong style="color:var(--blue-light);">$200</strong>. Fill out the details below and we'll get started.</p>
-      </div>
-      <form id="plugForm">
-        <div class="plug-form-section-label">Contact Info</div>
-        <div class="plug-form-row">
-          <div class="plug-form-group"><label>Full Name <span class="req">*</span></label><input type="text" name="name" required placeholder="Jane Smith" /></div>
-          <div class="plug-form-group"><label>Phone Number <span class="req">*</span></label><input type="tel" name="phone" required placeholder="(555) 123-4567" /></div>
-        </div>
-        <div class="plug-form-group"><label>Email Address <span class="req">*</span></label><input type="email" name="email" required placeholder="jane@mybusiness.com" /></div>
-        <div class="plug-form-divider"></div>
-        <div class="plug-form-section-label">Business Info</div>
-        <div class="plug-form-row">
-          <div class="plug-form-group"><label>Business Name <span class="req">*</span></label><input type="text" name="business" required placeholder="Jane's Bakery" /></div>
-          <div class="plug-form-group"><label>Industry <span class="req">*</span></label>
-            <select name="industry" required><option value="" disabled selected>Select industry</option><option>Restaurant / Food & Beverage</option><option>Beauty / Salon / Barbershop</option><option>Fitness / Wellness</option><option>Real Estate</option><option>Construction / Home Services</option><option>Retail / E-commerce</option><option>Photography / Videography</option><option>Music / Entertainment</option><option>Healthcare / Medical</option><option>Legal / Consulting</option><option>Automotive</option><option>Education / Coaching</option><option>Nonprofit</option><option>Tech / SaaS</option><option>Other</option></select>
-          </div>
-        </div>
-        <div class="plug-form-group"><label>Brief description of your business <span class="req">*</span></label><textarea name="description" required placeholder="Tell us what your business does, who you serve, and what makes you unique…"></textarea></div>
-        <div class="plug-form-divider"></div>
-        <div class="plug-form-section-label">Website Details</div>
-        <div class="plug-form-group"><label>How many pages? <span class="req">*</span></label><div class="plug-form-radios"><label><input type="radio" name="pages" value="1" required /> 1 Page</label><label><input type="radio" name="pages" value="2" /> 2 Pages</label><label><input type="radio" name="pages" value="3" /> 3 Pages</label></div></div>
-        <div class="plug-form-group"><label>Which pages do you need?</label><div class="plug-form-checks"><label><input type="checkbox" name="pagesNeeded" value="Home" /> Home</label><label><input type="checkbox" name="pagesNeeded" value="About" /> About</label><label><input type="checkbox" name="pagesNeeded" value="Services" /> Services</label><label><input type="checkbox" name="pagesNeeded" value="Contact" /> Contact</label><label><input type="checkbox" name="pagesNeeded" value="Portfolio" /> Portfolio</label><label><input type="checkbox" name="pagesNeeded" value="Menu/Pricing" /> Menu/Pricing</label><label><input type="checkbox" name="pagesNeeded" value="Booking" /> Booking</label></div></div>
-        <div class="plug-form-group"><label>Do you have a logo? <span class="req">*</span></label><div class="plug-form-radios"><label><input type="radio" name="hasLogo" value="Yes" required /> Yes</label><label><input type="radio" name="hasLogo" value="No" /> No</label></div></div>
-        <div class="plug-form-group"><label>Brand colors (if any)</label><input type="text" name="colors" placeholder="e.g. Navy blue, gold, white" /></div>
-        <div class="plug-form-group"><label>Any websites you like for inspiration?</label><textarea name="references" rows="2" placeholder="Paste URLs of sites you like the look of…"></textarea></div>
-        <div class="plug-form-group"><label>Do you have content ready (text &amp; images)? <span class="req">*</span></label><div class="plug-form-radios"><label><input type="radio" name="contentReady" value="Yes" required /> Yes</label><label><input type="radio" name="contentReady" value="Some" /> Some</label><label><input type="radio" name="contentReady" value="No" /> No</label></div></div>
-        <div class="plug-form-group"><label>Existing website URL (if any)</label><input type="text" name="existingUrl" placeholder="https://yourbusiness.com" /></div>
-        <div class="plug-form-group"><label>Social media links</label><textarea name="socials" rows="2" placeholder="Instagram, Facebook, TikTok URLs…"></textarea></div>
-        <div class="plug-form-group"><label>Any special requests or features?</label><textarea name="special" rows="2" placeholder="Contact form, gallery, animations, specific layout ideas…"></textarea></div>
-        <button type="submit" class="plug-submit">Submit &amp; Claim Your Website — $200</button>
-        <p style="text-align:center;font-size:0.75rem;color:rgba(255,255,255,0.3);margin-top:12px;">Payment required upfront to lock in your spot.</p>
-      </form>
-    </div>
-    <div id="plugSuccess" class="plug-success" style="display:none;">
-      <div class="plug-success-icon"><svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg></div>
-      <h3>You're In! 🎉</h3>
-      <p>Your Website Plug request has been received. Next step: schedule your kickoff call so we can get rolling.</p>
-      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="padding:16px 36px;font-size:1rem;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-        Schedule Your Kickoff Call
-      </a>
-    </div>
-  </div>
-</div>
 
 <script>
   // Navbar scroll
@@ -1481,106 +1386,6 @@
       requestAnimationFrame(animPts);
       setTimeout(function () { if (host.parentNode) host.remove(); }, 2500);
     }
-  })();
-
-  // ── The Website Plug: Popup + Form + Expiry ──
-  (function() {
-    var EXPIRY = new Date('2026-05-01T00:00:00');
-    if (new Date() >= EXPIRY) {
-      document.querySelectorAll('.promo-timed').forEach(function(el){ el.remove(); });
-      return;
-    }
-
-    var overlay = document.getElementById('plugPopup');
-    if (!overlay) return;
-    var closeBtn = overlay.querySelector('.plug-popup-close');
-    var form = document.getElementById('plugForm');
-    var successEl = document.getElementById('plugSuccess');
-    var formEl = document.getElementById('plugFormInner');
-
-    if (!sessionStorage.getItem('plugDismissed')) {
-      setTimeout(function() { overlay.classList.add('open'); }, 3000);
-    }
-
-    function closePopup() {
-      overlay.classList.remove('open');
-      sessionStorage.setItem('plugDismissed', '1');
-      var teaser = document.getElementById('plugTeaser');
-      if (teaser) teaser.style.display = '';
-      if (formEl) formEl.style.display = 'none';
-    }
-    closeBtn.addEventListener('click', closePopup);
-    overlay.addEventListener('click', function(e) { if (e.target === overlay) closePopup(); });
-
-    var showFormBtn = document.getElementById('plugShowForm');
-    if (showFormBtn) {
-      showFormBtn.addEventListener('click', function() {
-        document.getElementById('plugTeaser').style.display = 'none';
-        formEl.style.display = '';
-      });
-    }
-
-    window.openPlugForm = function() {
-      var teaser = document.getElementById('plugTeaser');
-      if (teaser) teaser.style.display = 'none';
-      if (formEl) formEl.style.display = '';
-      overlay.classList.add('open');
-    };
-
-    var SHEET_URL = 'https://script.google.com/macros/s/AKfycbzoT2M-KsUamTazd6XPgJjRqf0ss9dksGib6b8mKJQK99bzkb5KFKrasue_MG_TxLRD/exec';
-
-    form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      var btn = form.querySelector('.plug-submit');
-      btn.disabled = true;
-      btn.textContent = 'Submitting…';
-
-      var fd = new FormData(form);
-      var name = fd.get('name') || '';
-      var email = fd.get('email') || '';
-      var phone = fd.get('phone') || '';
-      var biz = fd.get('business') || '';
-      var industry = fd.get('industry') || '';
-      var desc = fd.get('description') || '';
-      var pages = fd.get('pages') || '';
-      var pagesNeeded = fd.getAll('pagesNeeded').join(', ');
-      var hasLogo = fd.get('hasLogo') || '';
-      var colors = fd.get('colors') || '';
-      var refs = fd.get('references') || '';
-      var content = fd.get('contentReady') || '';
-      var existing = fd.get('existingUrl') || '';
-      var socials = fd.get('socials') || '';
-      var special = fd.get('special') || '';
-
-      var prompt = 'Build a ' + pages + '-page website for "' + biz + '", a ' + industry + ' business. ';
-      prompt += 'Description: ' + desc + '. ';
-      prompt += 'Pages needed: ' + (pagesNeeded || 'Home') + '. ';
-      if (hasLogo === 'Yes') prompt += 'They have a logo (ask client for file). ';
-      else prompt += 'They do NOT have a logo — create a simple text-based logo. ';
-      if (colors) prompt += 'Brand colors: ' + colors + '. ';
-      else prompt += 'No specific brand colors — choose a professional palette fitting the industry. ';
-      if (refs) prompt += 'Reference/inspiration sites: ' + refs + '. ';
-      if (content === 'Yes') prompt += 'Client has content ready (copy + images). ';
-      else if (content === 'Some') prompt += 'Client has some content — supplement with professional placeholder copy. ';
-      else prompt += 'Client has NO content — write all copy and use placeholder images. ';
-      if (existing) prompt += 'Existing website: ' + existing + ' — review for context. ';
-      if (socials) prompt += 'Social media links to include: ' + socials + '. ';
-      if (special) prompt += 'Special requests: ' + special + '. ';
-      prompt += 'Contact: ' + name + ', ' + email + ', ' + phone + '. ';
-      prompt += 'This is a Website Plug promo build ($200, 1-3 pages, 3-5 business day delivery).';
-
-      var row = [
-        new Date().toLocaleString(),
-        name, email, phone, biz, industry, desc, pages, pagesNeeded,
-        hasLogo, colors, refs, content, existing, socials, special, prompt
-      ];
-
-      // Submit to Google Sheets via image GET (cannot be blocked by CORS)
-      new Image().src = SHEET_URL + '?data=' + encodeURIComponent(JSON.stringify({ row: row }));
-
-      formEl.style.display = 'none';
-      successEl.style.display = 'block';
-    });
   })();
 </script>
 <script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>

@@ -1,0 +1,12 @@
+# Never deploy these to the live site — kept locally / in git only
+.claude/
+.vscode/
+.DS_Store
+
+# Archived pages (still in git, NOT publicly accessible)
+_archived_*.html.bak
+*.bak
+
+# Internal docs, briefs, and drafts
+*.md
+*.docx

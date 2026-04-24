@@ -1,0 +1,1281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Launch-Ready — Brand + Custom Website in 30 Days | Edit Me Lo</title>
+  <meta name="description" content="Launch-Ready delivers brand identity and a custom-built website for early-stage founders in 30 days. Three tiers — Tip-Off, Fast Break, Franchise. Starting at $5,000." />
+  <meta property="og:title" content="Launch-Ready — Brand + Custom Website in 30 Days | Edit Me Lo" />
+  <meta property="og:description" content="Brand identity and a custom-built website for early-stage founders in 30 days. Three tiers. Starting at $5,000." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800;900&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --blue-light: #47C9F3;
+      --blue-dark:  #124F9E;
+      --gray:       #ECECEC;
+      --white:      #FFFFFF;
+      --dark:       #07101f;
+      --dark-2:     #0c1e3a;
+      --text:       #101828;
+      --text-muted: #475467;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      color: var(--text);
+      overflow-x: hidden;
+      background: linear-gradient(160deg, #ECECEC 0%, #dde8f8 40%, #e8f0fb 70%, #ECECEC 100%);
+      background-attachment: fixed;
+    }
+    img { display: block; max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+    svg { display: block; }
+
+    /* ── Utilities ──────────────────────────────────── */
+    .container { width: 92%; max-width: 1160px; margin: 0 auto; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-weight: 700; font-size: 0.93rem; letter-spacing: 0.02em;
+      cursor: pointer; white-space: nowrap; border: none;
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .btn:hover { transform: translateY(-3px); }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white);
+      box-shadow: 0 4px 20px rgba(71,201,243,0.3);
+    }
+    .btn-primary:hover { box-shadow: 0 10px 40px rgba(71,201,243,0.5); }
+    .btn-glass {
+      background: rgba(255,255,255,0.15);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(10px);
+    }
+    .btn-glass:hover { background: rgba(255,255,255,0.22); }
+    .btn svg { width: 18px; height: 18px; stroke: currentColor; fill: none; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+    .tag {
+      display: inline-block;
+      padding: 6px 14px; border-radius: 50px;
+      background: rgba(71,201,243,0.12);
+      color: var(--blue-dark);
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 18px;
+    }
+    .section-title {
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      font-weight: 900; letter-spacing: -0.03em; line-height: 1.08;
+      color: var(--dark);
+    }
+    .section-sub {
+      font-size: 1rem; color: var(--text-muted); line-height: 1.7;
+      max-width: 620px; margin-top: 16px;
+    }
+    .gradient-text {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* ── NAV (matches homepage: transparent → frosted on scroll) ─ */
+    #nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      padding: 20px 0;
+      transition: background 0.4s, padding 0.4s, box-shadow 0.4s, border-color 0.4s;
+    }
+    #nav.scrolled {
+      background: rgba(236,236,236,0.75);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border-bottom: 1px solid rgba(255,255,255,0.7);
+      box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+      padding: 12px 0;
+    }
+    .nav-wrap { display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+    .nav-logo { height: 46px; width: auto; }
+
+    .nav-links { display: flex; gap: 22px; list-style: none; align-items: center; }
+    .nav-links a {
+      font-size: 0.88rem; font-weight: 600; letter-spacing: 0.01em;
+      color: var(--white); opacity: 0.85;
+      transition: opacity 0.2s, color 0.2s;
+    }
+    .nav-links a:hover { opacity: 1; color: var(--blue-light); }
+    #nav.scrolled .nav-links a { color: var(--text); opacity: 1; }
+    #nav.scrolled .nav-links a:hover { color: var(--blue-dark); }
+
+    .nav-right { display: flex; align-items: center; gap: 14px; }
+    .nav-book { padding: 10px 22px; font-size: 0.84rem; }
+    #nav:not(.scrolled) .nav-book {
+      background: rgba(255,255,255,0.12);
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.3);
+      backdrop-filter: blur(8px);
+      box-shadow: none;
+    }
+    #nav:not(.scrolled) .nav-book:hover { background: rgba(255,255,255,0.22); box-shadow: none; }
+    #nav.scrolled .nav-book {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white);
+      border: 1px solid transparent;
+      box-shadow: 0 6px 20px rgba(71,201,243,0.35);
+    }
+    #nav.scrolled .nav-book:hover { box-shadow: 0 10px 28px rgba(71,201,243,0.5); }
+
+    .hamburger { display: none; cursor: pointer; background: none; border: none; padding: 4px; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 22px; height: 2px; background: var(--white); border-radius: 2px; transition: 0.3s; }
+    #nav.scrolled .hamburger span { background: var(--text); }
+
+    .mob-menu {
+      display: none; position: fixed; inset: 0; z-index: 1100;
+      background: rgba(7,16,31,0.97);
+      backdrop-filter: blur(20px);
+      flex-direction: column; align-items: center; justify-content: center; gap: 28px;
+    }
+    .mob-menu.open { display: flex; }
+    .mob-menu a { font-size: 1.5rem; font-weight: 800; color: var(--white); letter-spacing: -0.01em; transition: color 0.2s; }
+    .mob-menu a:hover { color: var(--blue-light); }
+    .mob-close { position: absolute; top: 22px; right: 22px; font-size: 2rem; color: var(--white); background: none; border: none; cursor: pointer; line-height: 1; z-index: 1101; }
+    .mob-menu.open ~ #nav .hamburger { display: none !important; }
+
+    @media (max-width: 820px) {
+      .nav-links, .nav-right { display: none; }
+      .hamburger { display: flex; }
+    }
+
+    /* ── HERO ──────────────────────────────────────── */
+    @keyframes gradientShift {
+      0%   { background-position: 0% 50%; }
+      50%  { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    .anim-grad {
+      background: linear-gradient(-45deg,
+        #07101f,
+        #0c1e3a,
+        #0f2d5e,
+        #124F9E,
+        #0d3a70,
+        #0c1e3a,
+        #07101f
+      );
+      background-size: 400% 400%;
+      animation: gradientShift 10s ease infinite;
+    }
+    #hero {
+      padding: 160px 0 90px;
+      color: var(--white);
+      position: relative; overflow: hidden;
+    }
+    #hero::after {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 20% 20%, rgba(71,201,243,0.16), transparent 45%),
+                  radial-gradient(circle at 80% 60%, rgba(18,79,158,0.32), transparent 50%);
+      pointer-events: none; z-index: 1;
+    }
+    #hero-beams {
+      position: absolute; inset: 0; pointer-events: none; overflow: hidden; z-index: 0;
+    }
+    @keyframes beamGlowFade {
+      0%   { opacity: 0.9; }
+      100% { opacity: 0; transform: scaleX(2.5); }
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 760px; }
+    .hero-tag {
+      display: inline-block; padding: 6px 14px; border-radius: 50px;
+      background: rgba(71,201,243,0.12); color: var(--blue-light);
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      margin-bottom: 20px;
+      border: 1px solid rgba(71,201,243,0.35);
+    }
+    .hero-h1 {
+      font-size: clamp(2.3rem, 5.5vw, 3.8rem);
+      font-weight: 900; letter-spacing: -0.035em; line-height: 1.04;
+      color: var(--white); margin-bottom: 22px;
+    }
+    .hero-h1 .hl {
+      background: linear-gradient(135deg, var(--blue-light), #a9e5ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .hero-sub {
+      font-size: 1.1rem; color: rgba(255,255,255,0.75); line-height: 1.7;
+      max-width: 620px; margin-bottom: 24px;
+    }
+    .hero-anchor {
+      font-size: 0.82rem; font-weight: 700; letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 30px;
+    }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    /* ── Value Prop ────────────────────────────────── */
+    .vp-section { padding: 80px 0 40px; }
+    .vp-text {
+      font-size: clamp(1.15rem, 2.3vw, 1.55rem);
+      font-weight: 700; letter-spacing: -0.015em; line-height: 1.45;
+      color: var(--dark); text-align: center;
+      max-width: 820px; margin: 0 auto;
+    }
+    .vp-text em {
+      font-style: normal;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+
+    /* ── Section base ──────────────────────────────── */
+    .section-head { text-align: center; margin-bottom: 56px; }
+    .section-head .section-sub { margin: 16px auto 0; }
+
+    /* ── What's Included — tabbed interface ────────── */
+    .includes-section { padding: 80px 0 90px; }
+
+    .includes-tabs {
+      display: flex; justify-content: center; gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 48px; margin-bottom: 40px;
+    }
+    .tab-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 22px;
+      border-radius: 50px;
+      background: rgba(255,255,255,0.62);
+      border: 1px solid rgba(18,79,158,0.14);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.01em;
+      cursor: pointer;
+      transition: transform 0.25s, box-shadow 0.25s, background 0.25s, color 0.25s, border-color 0.25s;
+    }
+    .tab-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(18,79,158,0.08);
+    }
+    .tab-btn svg {
+      width: 16px; height: 16px; stroke: currentColor; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .tab-btn.active {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white);
+      border-color: transparent;
+      box-shadow: 0 10px 28px rgba(71,201,243,0.35);
+    }
+    .tab-btn.active:hover { transform: translateY(-3px); }
+
+    .tab-panels { position: relative; }
+    .tab-panel { display: none; animation: panelFade 0.4s ease; }
+    .tab-panel.active { display: block; }
+    @keyframes panelFade {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .panel-inner {
+      max-width: 620px; margin: 0 auto; text-align: center;
+    }
+    .panel-icon {
+      width: 58px; height: 58px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 22px;
+      box-shadow: 0 10px 26px rgba(71,201,243,0.28);
+    }
+    .panel-icon svg {
+      width: 26px; height: 26px; stroke: #fff; fill: none;
+      stroke-width: 2; stroke-linecap: round; stroke-linejoin: round;
+    }
+    .panel-desc {
+      font-size: 1rem; color: var(--text-muted); line-height: 1.7;
+      margin-bottom: 30px;
+    }
+    .panel-list {
+      list-style: none; display: flex; flex-direction: column; gap: 14px;
+      text-align: left;
+      max-width: 500px; margin: 0 auto;
+    }
+    .panel-list li {
+      display: flex; gap: 14px; align-items: flex-start;
+      font-size: 0.95rem; color: var(--dark); line-height: 1.55;
+    }
+    .panel-check {
+      flex-shrink: 0; width: 20px; height: 20px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .panel-check svg {
+      width: 11px; height: 11px; stroke: #fff; fill: none;
+      stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+    }
+
+    @media (max-width: 600px) {
+      .includes-tabs { gap: 8px; }
+      .tab-btn { padding: 10px 16px; font-size: 0.8rem; }
+      .tab-btn svg { width: 14px; height: 14px; }
+    }
+
+    /* ── Tiers ─────────────────────────────────────── */
+    .tiers-section { padding: 80px 0 100px; }
+
+    .pricing-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px;
+      align-items: stretch;
+      margin-top: 56px;
+    }
+    .pricing-card {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 26px;
+      padding: 40px 30px 34px;
+      display: flex; flex-direction: column;
+      position: relative;
+      transition: transform 0.35s cubic-bezier(.16,1,.3,1), box-shadow 0.35s;
+    }
+    .pricing-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 60px rgba(18,79,158,0.12);
+    }
+    .pricing-card.featured {
+      background: linear-gradient(180deg, #07101f 0%, #0c1e3a 100%);
+      color: var(--white);
+      border: 1px solid rgba(71,201,243,0.35);
+      padding-top: 54px;
+      box-shadow: 0 24px 60px rgba(18,79,158,0.22);
+      z-index: 2;
+    }
+    .pricing-card.featured::before {
+      content: ''; position: absolute; inset: 0; border-radius: 26px;
+      background: radial-gradient(circle at 50% -20%, rgba(71,201,243,0.28), transparent 55%);
+      pointer-events: none;
+    }
+    .pricing-card.featured:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 34px 80px rgba(18,79,158,0.35);
+    }
+    .most-popular {
+      position: absolute; top: -14px; left: 50%; transform: translateX(-50%);
+      padding: 7px 16px; border-radius: 50px;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      color: var(--white); font-size: 0.64rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+      box-shadow: 0 6px 18px rgba(71,201,243,0.4);
+      white-space: nowrap;
+    }
+
+    .pc-eyebrow {
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--blue-dark); margin-bottom: 12px;
+    }
+    .pricing-card.featured .pc-eyebrow { color: var(--blue-light); }
+    .pc-name {
+      font-size: 1.75rem; font-weight: 900; letter-spacing: -0.025em;
+      margin-bottom: 14px;
+    }
+    .pricing-card.featured .pc-name { color: var(--white); }
+    .pc-price {
+      font-size: 2.5rem; font-weight: 900; letter-spacing: -0.03em; line-height: 1;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+      margin-bottom: 4px;
+    }
+    .pricing-card.featured .pc-price {
+      background: linear-gradient(135deg, var(--blue-light), #a9e5ff);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .pc-price-sub { font-size: 0.78rem; color: var(--text-muted); margin-bottom: 22px; }
+    .pricing-card.featured .pc-price-sub { color: rgba(255,255,255,0.55); }
+    .pc-tagline {
+      font-size: 0.93rem; line-height: 1.65; color: var(--text-muted);
+      padding-bottom: 22px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid rgba(18,79,158,0.1);
+      position: relative;
+    }
+    .pricing-card.featured .pc-tagline {
+      color: rgba(255,255,255,0.72); border-bottom-color: rgba(255,255,255,0.12);
+    }
+    .pc-features {
+      list-style: none; display: flex; flex-direction: column; gap: 11px;
+      margin-bottom: 22px;
+      flex: 1;
+    }
+    .pc-features li {
+      font-size: 0.9rem; line-height: 1.5;
+      color: var(--dark);
+      display: flex; align-items: flex-start; gap: 10px;
+    }
+    .pricing-card.featured .pc-features li { color: rgba(255,255,255,0.85); }
+    .pc-check {
+      flex-shrink: 0; width: 18px; height: 18px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      display: flex; align-items: center; justify-content: center;
+      margin-top: 2px;
+    }
+    .pc-check svg { width: 10px; height: 10px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+    .pc-fit {
+      font-size: 0.8rem; line-height: 1.55; color: var(--text-muted);
+      padding-top: 18px; margin-bottom: 22px;
+      border-top: 1px solid rgba(18,79,158,0.1);
+    }
+    .pricing-card.featured .pc-fit { color: rgba(255,255,255,0.58); border-top-color: rgba(255,255,255,0.12); }
+    .pc-fit strong { color: var(--dark); font-weight: 800; }
+    .pricing-card.featured .pc-fit strong { color: var(--white); }
+    .pc-cta {
+      width: 100%; justify-content: center;
+      position: relative; z-index: 2;
+    }
+    .pricing-card.featured .pc-cta {
+      background: linear-gradient(135deg, var(--blue-light), #6fd7f7);
+      color: #07101f;
+    }
+    .pricing-card.featured .pc-cta:hover { box-shadow: 0 14px 36px rgba(71,201,243,0.5); }
+
+    /* Compare toggle + table */
+    .compare-wrap { margin-top: 44px; text-align: center; }
+    .compare-toggle {
+      display: inline-flex; align-items: center; gap: 10px;
+      font-size: 0.88rem; font-weight: 700; letter-spacing: 0.02em;
+      color: var(--blue-dark); cursor: pointer;
+      background: rgba(255,255,255,0.8);
+      border: 1px solid rgba(18,79,158,0.15);
+      padding: 12px 22px; border-radius: 50px;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    }
+    .compare-toggle:hover {
+      background: var(--white);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 24px rgba(18,79,158,0.12);
+    }
+    .compare-toggle svg {
+      width: 14px; height: 14px; stroke: currentColor; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round;
+      transition: transform 0.35s;
+    }
+    .compare-toggle.open svg { transform: rotate(180deg); }
+
+    .compare-table {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.5s ease, opacity 0.35s ease, margin-top 0.35s ease;
+      opacity: 0; margin-top: 0;
+    }
+    .compare-table.open { max-height: 1600px; opacity: 1; margin-top: 28px; }
+
+    .compare-inner {
+      background: rgba(255,255,255,0.72);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255,255,255,0.9);
+      border-radius: 24px;
+      overflow: hidden;
+      text-align: left;
+    }
+    .compare-row {
+      display: grid; grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 16px;
+      padding: 16px 24px;
+      border-bottom: 1px solid rgba(18,79,158,0.08);
+      align-items: center;
+    }
+    .compare-row:last-child { border-bottom: none; }
+    .compare-row.head {
+      background: linear-gradient(135deg, rgba(18,79,158,0.07), rgba(71,201,243,0.1));
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--blue-dark);
+      padding: 18px 24px;
+    }
+    .compare-row.head > div:not(:first-child) { text-align: center; }
+    .compare-row.head .head-featured { color: var(--blue-dark); position: relative; }
+    .compare-row.head .head-featured::after {
+      content: 'Most Popular';
+      display: block; font-size: 0.58rem; letter-spacing: 0.14em;
+      color: var(--blue-light); margin-top: 2px; font-weight: 900;
+    }
+    .compare-cell { font-size: 0.9rem; color: var(--dark); font-weight: 600; }
+    .compare-cell.check { text-align: center; }
+    .compare-check {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 22px; height: 22px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+    }
+    .compare-check svg { width: 12px; height: 12px; stroke: #fff; fill: none; stroke-width: 2.8; stroke-linecap: round; stroke-linejoin: round; }
+    .compare-dash { color: rgba(18,79,158,0.22); font-weight: 700; font-size: 1.1rem; }
+
+    @media (max-width: 880px) {
+      .pricing-grid { grid-template-columns: 1fr; max-width: 440px; margin: 56px auto 0; }
+      .pricing-card.featured { transform: none; }
+      .pricing-card.featured:hover { transform: translateY(-6px); }
+      .compare-row { grid-template-columns: 1.6fr repeat(3, 1fr); padding: 14px 16px; gap: 8px; }
+      .compare-row.head { font-size: 0.6rem; letter-spacing: 0.08em; padding: 14px 16px; }
+      .compare-row.head .head-featured::after { font-size: 0.5rem; }
+      .compare-cell { font-size: 0.8rem; }
+    }
+
+    /* ── 30-Day Promise ────────────────────────────── */
+    .promise-section { padding: 90px 0; }
+    .promise-card {
+      background: linear-gradient(160deg, #07101f 0%, #0c1e3a 55%, #0f2d5e 100%);
+      color: var(--white);
+      border-radius: 36px;
+      padding: 64px 56px;
+      position: relative; overflow: hidden;
+    }
+    .promise-card::after {
+      content: ''; position: absolute; top: -120px; right: -120px;
+      width: 340px; height: 340px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(71,201,243,0.22), transparent 70%);
+      pointer-events: none;
+    }
+    .promise-eyebrow {
+      display: inline-block;
+      font-size: 0.7rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+      color: var(--blue-light); margin-bottom: 14px;
+    }
+    .promise-card h2 {
+      font-size: clamp(1.7rem, 3.5vw, 2.35rem);
+      font-weight: 900; letter-spacing: -0.03em; line-height: 1.1;
+      color: var(--white); margin-bottom: 18px;
+      max-width: 620px;
+    }
+    .promise-card > p {
+      font-size: 1rem; color: rgba(255,255,255,0.75); line-height: 1.75;
+      max-width: 620px; margin-bottom: 36px;
+    }
+    .promise-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+      padding-top: 28px; border-top: 1px solid rgba(255,255,255,0.12);
+      position: relative; z-index: 2;
+    }
+    .promise-item-label {
+      font-size: 1rem; font-weight: 800; color: var(--white); margin-bottom: 8px;
+    }
+    .promise-grid p { font-size: 0.9rem; color: rgba(255,255,255,0.7); line-height: 1.65; }
+
+    @media (max-width: 760px) {
+      .promise-card { padding: 44px 28px; }
+      .promise-grid { grid-template-columns: 1fr; gap: 22px; }
+    }
+
+    /* ── The Alternatives — opposition rows ────────── */
+    .alt-section {
+      padding: 90px 0 100px;
+      background: linear-gradient(165deg, rgba(18,79,158,0.04), rgba(71,201,243,0.05));
+    }
+    .versus-list {
+      margin-top: 48px;
+      display: flex; flex-direction: column; gap: 20px;
+    }
+    .versus-row {
+      display: grid; grid-template-columns: 1fr 64px 1fr;
+      gap: 28px; align-items: center;
+      padding: 30px 36px;
+      background: rgba(255,255,255,0.6);
+      border: 1px solid rgba(255,255,255,0.92);
+      border-radius: 22px;
+      backdrop-filter: blur(14px);
+      transition: transform 0.25s, box-shadow 0.25s;
+    }
+    .versus-row:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 50px rgba(18,79,158,0.09);
+    }
+    .vs-head {
+      font-size: 0.66rem; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+    .vs-old .vs-head { color: #b7291c; }
+    .vs-new .vs-head {
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .vs-old-item {
+      font-size: 0.94rem; line-height: 1.55;
+      color: var(--text-muted);
+      text-decoration: line-through;
+      text-decoration-color: rgba(183,41,28,0.45);
+      text-decoration-thickness: 1.5px;
+      margin-bottom: 6px;
+    }
+    .vs-old-item:last-child { margin-bottom: 0; }
+    .vs-new-title {
+      font-size: 1.1rem; font-weight: 900; letter-spacing: -0.015em;
+      color: var(--dark); margin-bottom: 6px; line-height: 1.25;
+    }
+    .vs-new-detail {
+      font-size: 0.92rem; color: var(--text-muted); line-height: 1.6;
+    }
+    .vs-arrow {
+      display: flex; align-items: center; justify-content: center;
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--blue-dark), var(--blue-light));
+      margin: 0 auto;
+      box-shadow: 0 10px 26px rgba(71,201,243,0.32);
+    }
+    .vs-arrow svg { width: 20px; height: 20px; stroke: #fff; fill: none; stroke-width: 2.5; stroke-linecap: round; stroke-linejoin: round; }
+
+    @media (max-width: 760px) {
+      .versus-row { grid-template-columns: 1fr; gap: 18px; padding: 26px 22px; }
+      .vs-arrow { transform: rotate(90deg); width: 44px; height: 44px; }
+    }
+
+    /* ── Final CTA ─────────────────────────────────── */
+    .final-cta {
+      padding: 100px 0;
+      background: linear-gradient(165deg, #07101f 0%, #0c1e3a 55%, #0f2d5e 100%);
+      color: var(--white); text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 10%, rgba(71,201,243,0.18), transparent 55%);
+      pointer-events: none;
+    }
+    .final-cta > .container { position: relative; z-index: 2; }
+    .final-cta h2 {
+      font-size: clamp(1.9rem, 4.2vw, 2.8rem);
+      font-weight: 900; letter-spacing: -0.03em; line-height: 1.08;
+      color: var(--white); margin-bottom: 18px;
+    }
+    .final-cta p {
+      font-size: 1.05rem; color: rgba(255,255,255,0.72); line-height: 1.65;
+      max-width: 560px; margin: 0 auto 32px;
+    }
+
+    /* ── Footer ────────────────────────────────────── */
+    #footer {
+      background: #07101f; color: rgba(255,255,255,0.7);
+      padding: 70px 0 28px;
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 48px;
+      padding-bottom: 44px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .footer-logo { width: 90px; margin-bottom: 18px; }
+    .footer-desc { font-size: 0.88rem; line-height: 1.7; margin-bottom: 18px; max-width: 320px; }
+    .footer-contact { display: flex; flex-direction: column; gap: 6px; font-size: 0.88rem; }
+    .footer-contact a { color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-contact a:hover { color: var(--blue-light); }
+    .footer-h {
+      font-size: 0.72rem; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+      color: var(--white); margin-bottom: 18px;
+    }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+    .footer-links a { font-size: 0.88rem; color: rgba(255,255,255,0.65); transition: color 0.2s; }
+    .footer-links a:hover { color: var(--blue-light); }
+    .footer-bottom {
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 18px; padding-top: 28px;
+    }
+    .footer-copy { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+    .footer-legal { display: flex; gap: 20px; }
+    .footer-legal a { font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+    .footer-legal a:hover { color: var(--blue-light); }
+
+    @media (max-width: 760px) {
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- MOBILE MENU -->
+<div class="mob-menu" id="mobMenu">
+  <button class="mob-close" id="mobClose" aria-label="Close">×</button>
+  <a href="index.html" onclick="closeMob()">Home</a>
+  <a href="the-offer" onclick="closeMob()" style="color:var(--blue-light);">The Offer</a>
+  <a href="portfolio" onclick="closeMob()">Portfolio</a>
+  <a href="quiz.html" onclick="closeMob()">Tier Match Quiz</a>
+  <a href="index.html#process" onclick="closeMob()">Our Process</a>
+  <a href="index.html#testimonials" onclick="closeMob()">Reviews</a>
+  <a href="index.html#faq" onclick="closeMob()">FAQ</a>
+  <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top:12px;">Book Consultation</a>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="container nav-wrap">
+    <a href="index.html"><img src="assets/logo-primary.png" alt="Edit Me Lo" class="nav-logo" /></a>
+    <ul class="nav-links">
+      <li><a href="the-offer">The Offer</a></li>
+      <li><a href="portfolio">Portfolio</a></li>
+      <li><a href="quiz.html">Tier Match Quiz</a></li>
+      <li><a href="index.html#process">Our Process</a></li>
+      <li><a href="index.html#testimonials">Reviews</a></li>
+      <li><a href="index.html#faq">FAQ</a></li>
+    </ul>
+    <div class="nav-right">
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn nav-book">Book Consultation</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="hero" class="anim-grad">
+  <div id="hero-beams" aria-hidden="true"></div>
+  <div class="container hero-inner">
+    <div class="hero-tag">The Offer · Launch-Ready</div>
+    <h1 class="hero-h1">Your brand, your custom website,<br /><span class="hl">launch-ready in 30 days.</span></h1>
+    <p class="hero-sub">Built for founders who need to look like they raised a Series A — before they have. Brand identity plus a custom-built site, deployed on Vercel, yours to own on day one.</p>
+    <p class="hero-anchor">Starting at $5,000 · 30-day delivery · 50/50 payment terms</p>
+    <div class="hero-actions">
+      <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+        <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        Book a Launch-Ready intro call
+      </a>
+      <a href="#tiers" class="btn btn-glass">See the tiers</a>
+    </div>
+  </div>
+</section>
+
+<!-- VALUE PROP -->
+<section class="vp-section">
+  <div class="container">
+    <p class="vp-text">In 30 days, you go from <em>"I can't send anyone to this site"</em> to a cohesive brand and a custom-built website that makes investors, hires, and early customers lean in instead of click away.</p>
+  </div>
+</section>
+
+<!-- WHAT'S INCLUDED -->
+<section class="includes-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">What's Included</div>
+      <h2 class="section-title">Every engagement,<br /><span class="gradient-text">every tier.</span></h2>
+      <p class="section-sub">These are the deliverables Launch-Ready always includes — regardless of tier. Tiers add breadth on top of this baseline.</p>
+    </div>
+
+    <div class="includes-tabs" role="tablist">
+      <button class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-brand" data-tab="brand">
+        <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
+        Brand Identity
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-website" data-tab="website">
+        <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        Custom Website
+      </button>
+      <button class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-delivery" data-tab="delivery">
+        <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        Delivery
+      </button>
+    </div>
+
+    <div class="tab-panels">
+
+      <div class="tab-panel active" role="tabpanel" id="panel-brand" data-panel="brand">
+        <div class="panel-inner">
+          <div class="panel-icon">
+            <svg viewBox="0 0 24 24"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <p class="panel-desc">Strategy first. Then the visual system — logo, color, type, and usage rules — that carries the business from launch day forward.</p>
+          <ul class="panel-list">
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Discovery + strategy · 3 directions · 2 revisions to final</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Primary logo, secondary mark, and favicon</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Color palette + typography system</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>8–12 page brand guidelines PDF</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Social profile assets for LinkedIn, Instagram, Facebook, TikTok, X</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-website" data-panel="website">
+        <div class="panel-inner">
+          <div class="panel-icon">
+            <svg viewBox="0 0 24 24"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+          </div>
+          <p class="panel-desc">Custom-built and deployed on Vercel. Fast, SEO-ready, mobile-first. No templates, no lock-in, no ceilings you'll hit in six months.</p>
+          <ul class="panel-list">
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Custom-built · Deployed on Vercel · Mobile-responsive</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Basic SEO — meta tags, sitemap, Open Graph, semantic HTML</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Contact form wired to your email or CRM</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Analytics installed (Google Analytics or Plausible)</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>One round of post-launch refinement within 14 days</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tab-panel" role="tabpanel" id="panel-delivery" data-panel="delivery">
+        <div class="panel-inner">
+          <div class="panel-icon">
+            <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <p class="panel-desc">30 days. 50/50 payment. Everything yours on day one — no platform lock-in, no subscription traps, no holding your site hostage if you move on.</p>
+          <ul class="panel-list">
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>30 calendar days from signed contract + 50% deposit</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Payment: 50% to start, 50% before launch</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Every file, every asset, yours on day one</li>
+            <li><span class="panel-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Hosted on Vercel — portable anywhere you want to move</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- TIERS -->
+<section class="tiers-section" id="tiers">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">Pricing Tiers</div>
+      <h2 class="section-title">Three ways<br /><span class="gradient-text">to play.</span></h2>
+      <p class="section-sub">Pick the tier that matches the game you're actually playing — not the one you wish you were playing.</p>
+    </div>
+
+    <div class="pricing-grid">
+
+      <!-- Tip-Off -->
+      <div class="pricing-card" id="tip-off">
+        <div class="pc-eyebrow">Tier 1 · Entry</div>
+        <h3 class="pc-name">Tip-Off</h3>
+        <div class="pc-price">$5,000</div>
+        <div class="pc-price-sub">One-time · 50/50 payment</div>
+        <p class="pc-tagline">Get in the game. Clean brand, 3–4 page site, built for founders who need to look sharp and start pitching.</p>
+        <ul class="pc-features">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Core brand system</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>3–4 page custom website</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Strategy, 3 directions, 2 revisions</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>30-day delivery</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>All files yours on day one</li>
+        </ul>
+        <p class="pc-fit"><strong>Best fit:</strong> Solo founder or small team with one milestone coming up. Copy mostly in hand.</p>
+        <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary pc-cta">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Tip-Off call
+        </a>
+      </div>
+
+      <!-- Fast Break (featured) -->
+      <div class="pricing-card featured" id="fast-break">
+        <div class="most-popular">Most Popular</div>
+        <div class="pc-eyebrow">Tier 2 · Core</div>
+        <h3 class="pc-name">Fast Break</h3>
+        <div class="pc-price">$6,500</div>
+        <div class="pc-price-sub">One-time · 50/50 payment</div>
+        <p class="pc-tagline">Pick up the pace. Full brand system and a 5-page site — room for product, social proof, and the story behind the work.</p>
+        <ul class="pc-features">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Everything in Tip-Off</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Full brand system (extended palette, typography, usage)</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>5-page website — adds product, pricing, or press</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>30-day delivery</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>All files yours on day one</li>
+        </ul>
+        <p class="pc-fit"><strong>Best fit:</strong> Founders with a launch plus a raise — or launch plus first hires. You want room for product/pricing or press.</p>
+        <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary pc-cta">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Fast Break call
+        </a>
+      </div>
+
+      <!-- Franchise -->
+      <div class="pricing-card" id="franchise">
+        <div class="pc-eyebrow">Tier 3 · Premium</div>
+        <h3 class="pc-name">Franchise</h3>
+        <div class="pc-price">$8,000</div>
+        <div class="pc-price-sub">One-time · 50/50 payment</div>
+        <p class="pc-tagline">Go all-in. Extended brand, 5 pages plus a dedicated landing page, and copywriting support — for founders running it all at once.</p>
+        <ul class="pc-features">
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Everything in Fast Break</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Extended brand system (team-ready usage docs)</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>5 pages + 1 campaign / fundraise landing page</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>Copywriting support across core pages</li>
+          <li><span class="pc-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span>All files yours on day one</li>
+        </ul>
+        <p class="pc-fit"><strong>Best fit:</strong> Founders running launch, fundraise, and first hires close together — and who want help making every page read right.</p>
+        <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary pc-cta">
+          <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Book a Franchise call
+        </a>
+      </div>
+
+    </div>
+
+    <!-- Compare all details -->
+    <div class="compare-wrap">
+      <button class="compare-toggle" id="compareToggle" aria-expanded="false" aria-controls="compareTable">
+        <span id="compareLabel">Compare all details</span>
+        <svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg>
+      </button>
+      <div class="compare-table" id="compareTable">
+        <div class="compare-inner">
+          <div class="compare-row head">
+            <div>Feature</div>
+            <div>Tip-Off</div>
+            <div class="head-featured">Fast Break</div>
+            <div>Franchise</div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Core brand system (logo, palette, typography, basic usage)</div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Full brand system (extended palette, expanded typography)</div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Extended brand system (team-ready usage docs)</div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">3–4 page custom website</div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">5-page website (adds product, pricing, or press)</div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Dedicated campaign / fundraise landing page</div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Copywriting support across core pages</div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-dash">—</span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">Strategy · 3 directions · 2 revisions to final</div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">30-day delivery · 50/50 payment terms</div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+          <div class="compare-row">
+            <div class="compare-cell">All files + assets yours on day one</div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+            <div class="compare-cell check"><span class="compare-check"><svg viewBox="0 0 12 12"><polyline points="2,6 5,9 10,3"/></svg></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 30-DAY PROMISE -->
+<section class="promise-section">
+  <div class="container">
+    <div class="promise-card">
+      <div class="promise-eyebrow">The 30-Day Promise</div>
+      <h2>Live in 30 days — or we keep working, at our expense, until it is.</h2>
+      <p>Your site goes live within 30 days of kickoff and 50% deposit, or we keep going — no new invoices, no "scope changes" mid-stretch. You get what was promised on the timeline that was promised.</p>
+      <div class="promise-grid">
+        <div>
+          <div class="promise-item-label">You own it all, day one.</div>
+          <p>Every file, every asset, every line of your site is yours. Hosted on Vercel, portable to anywhere you ever want to move.</p>
+        </div>
+        <div>
+          <div class="promise-item-label">No platform lock-in.</div>
+          <p>No subscription traps. No holding your site hostage if you decide to move on. Real ownership, real flexibility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY THIS BEATS ALTERNATIVES -->
+<section class="alt-section">
+  <div class="container">
+    <div class="section-head">
+      <div class="tag">The Alternatives</div>
+      <h2 class="section-title">Why Launch-Ready<br /><span class="gradient-text">beats what's out there.</span></h2>
+    </div>
+
+    <div class="versus-list">
+
+      <div class="versus-row">
+        <div class="vs-old">
+          <div class="vs-head">Instead of</div>
+          <div class="vs-old-item">Full-service agency at $25K+ starting next quarter</div>
+          <div class="vs-old-item">DIY Squarespace that eats your weekends</div>
+        </div>
+        <div class="vs-arrow">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="vs-new">
+          <div class="vs-head">Launch-Ready</div>
+          <div class="vs-new-title">30 days, not 3 months.</div>
+          <p class="vs-new-detail">A live, custom-built brand and site in 30 days — without cutting strategy corners.</p>
+        </div>
+      </div>
+
+      <div class="versus-row">
+        <div class="vs-old">
+          <div class="vs-head">Instead of</div>
+          <div class="vs-old-item">Squarespace ceiling you'll outgrow in six months</div>
+          <div class="vs-old-item">Wix lock-in if you ever want to migrate</div>
+        </div>
+        <div class="vs-arrow">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="vs-new">
+          <div class="vs-head">Launch-Ready</div>
+          <div class="vs-new-title">Custom-built beats templated.</div>
+          <p class="vs-new-detail">Fast, SEO-ready, built to scale — because it's actually built, not assembled. Real ownership, portable anywhere.</p>
+        </div>
+      </div>
+
+      <div class="versus-row">
+        <div class="vs-old">
+          <div class="vs-head">Instead of</div>
+          <div class="vs-old-item">Agencies taking dentist sites and e-commerce wine shops</div>
+          <div class="vs-old-item">Generic templates recycled for every client</div>
+        </div>
+        <div class="vs-arrow">
+          <svg viewBox="0 0 24 24"><path d="M5 12h14"/><polyline points="12 5 19 12 12 19"/></svg>
+        </div>
+        <div class="vs-new">
+          <div class="vs-head">Launch-Ready</div>
+          <div class="vs-new-title">Built only for founders.</div>
+          <p class="vs-new-detail">Tuned for investor-ready narratives, hiring pages that attract talent, and launch days that convert.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="final-cta">
+  <div class="container">
+    <h2>Ready to go Launch-Ready?</h2>
+    <p>Twenty minutes on a call tells us whether it's the right fit for your 30-day window. No pitch, no pressure.</p>
+    <a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener" class="btn btn-primary">
+      <svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+      Book a Launch-Ready intro call
+    </a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="assets/logo-primary.png" alt="Edit Me Lo" class="footer-logo" />
+        <p class="footer-desc">A small creative agency led by Lauren. Brand identity and custom websites for early-stage founders — launch-ready in 30 days.</p>
+        <div class="footer-contact">
+          <a href="mailto:info@editmelo.com">info@editmelo.com</a>
+          <a href="tel:4632801331">(463) 280-1331</a>
+        </div>
+      </div>
+      <div>
+        <div class="footer-h">The Offer</div>
+        <ul class="footer-links">
+          <li><a href="the-offer">Launch-Ready</a></li>
+          <li><a href="the-offer#tip-off">Tip-Off — $5,000</a></li>
+          <li><a href="the-offer#fast-break">Fast Break — $6,500</a></li>
+          <li><a href="the-offer#franchise">Franchise — $8,000</a></li>
+          <li><a href="quiz.html">Tier Match Quiz</a></li>
+          <li><a href="https://calendar.app.google/2Bwwv9tpStyuhFVXA" target="_blank" rel="noopener">Book An Intro Call</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-h">Company</div>
+        <ul class="footer-links">
+          <li><a href="index.html#about">About Lauren</a></li>
+          <li><a href="index.html#process">Our Process</a></li>
+          <li><a href="index.html#testimonials">Client Reviews</a></li>
+          <li><a href="index.html#faq">FAQ</a></li>
+          <li><a href="portfolio">Portfolio</a></li>
+          <li><a href="mailto:info@editmelo.com">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© 2026 Edit Me Lo Creative Agency — All Rights Reserved.</p>
+      <div class="footer-legal">
+        <a href="privacy">Privacy Policy</a>
+        <a href="terms">Terms &amp; Conditions</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 60), { passive: true });
+  document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobMenu').classList.add('open'));
+  document.getElementById('mobClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mobMenu').classList.remove('open'); }
+
+  // ── What's Included tabs ─────────────────────────
+  (function() {
+    const tabs   = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    if (!tabs.length || !panels.length) return;
+    tabs.forEach(function(btn) {
+      btn.addEventListener('click', function() {
+        const target = btn.getAttribute('data-tab');
+        tabs.forEach(function(b) {
+          const active = b === btn;
+          b.classList.toggle('active', active);
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        panels.forEach(function(p) {
+          p.classList.toggle('active', p.getAttribute('data-panel') === target);
+        });
+      });
+    });
+  })();
+
+  // ── Compare table toggle ─────────────────────────
+  (function() {
+    const btn = document.getElementById('compareToggle');
+    const tbl = document.getElementById('compareTable');
+    const lbl = document.getElementById('compareLabel');
+    if (!btn || !tbl) return;
+    btn.addEventListener('click', function() {
+      const isOpen = tbl.classList.toggle('open');
+      btn.classList.toggle('open', isOpen);
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      if (lbl) lbl.textContent = isOpen ? 'Hide details' : 'Compare all details';
+    });
+  })();
+
+  // ── Beams with Collision (ported from index) ─────
+  (function () {
+    const hero    = document.getElementById('hero');
+    const wrapper = document.getElementById('hero-beams');
+    if (!hero || !wrapper) return;
+
+    const BEAM_COLORS = [
+      'rgba(255,255,255,0.85)',
+      '#47C9F3',
+      'rgba(210,225,238,0.70)',
+      'rgba(255,255,255,0.60)',
+      '#47C9F3',
+      'rgba(200,218,235,0.65)',
+      'rgba(255,255,255,0.55)',
+    ];
+    const cfgs = [
+      { px: 0.06, dur: 7,  delay: 2,  repeat: 3,   h: 56 },
+      { px: 0.18, dur: 3,  delay: 4,  repeat: 3,   h: 56 },
+      { px: 0.31, dur: 7,  delay: 0,  repeat: 7,   h: 24 },
+      { px: 0.46, dur: 5,  delay: 4,  repeat: 14,  h: 56 },
+      { px: 0.63, dur: 11, delay: 0,  repeat: 2,   h: 80 },
+      { px: 0.78, dur: 4,  delay: 0,  repeat: 2,   h: 48 },
+      { px: 0.91, dur: 6,  delay: 2,  repeat: 4,   h: 24 },
+    ];
+    cfgs.forEach((cfg, i) => {
+      cfg.color = BEAM_COLORS[i];
+      setTimeout(() => runBeam(cfg), cfg.delay * 1000);
+    });
+
+    function runBeam(cfg) {
+      const heroH = hero.offsetHeight;
+      const heroW = hero.offsetWidth;
+      const xPx   = cfg.px * heroW;
+      const startY = -(cfg.h + 60);
+      const endY   = heroH + 20;
+      const travel = endY - startY;
+      const collideAt = heroH - 52;
+
+      const beam = document.createElement('div');
+      beam.style.cssText =
+        'position:absolute;left:' + xPx + 'px;top:0;width:1.5px;height:' + cfg.h + 'px;' +
+        'background:linear-gradient(to bottom,transparent,' + cfg.color + ');' +
+        'border-radius:9999px;will-change:transform;';
+      wrapper.appendChild(beam);
+
+      const durMs = cfg.dur * 1000;
+      const t0 = performance.now();
+      let collided = false;
+
+      function tick(now) {
+        const frac = Math.min((now - t0) / durMs, 1);
+        const y = startY + frac * travel;
+        beam.style.transform = 'translateY(' + y + 'px)';
+
+        if (!collided && (y + cfg.h) >= collideAt) {
+          collided = true;
+          createExplosion(xPx, collideAt, cfg.color);
+          beam.style.transition = 'opacity 0.25s';
+          beam.style.opacity = '0';
+        }
+
+        if (frac < 1) {
+          requestAnimationFrame(tick);
+        } else {
+          beam.remove();
+          setTimeout(() => runBeam(cfg), cfg.repeat * 1000);
+        }
+      }
+      requestAnimationFrame(tick);
+    }
+
+    function createExplosion(x, y, color) {
+      const host = document.createElement('div');
+      host.style.cssText =
+        'position:absolute;left:' + x + 'px;top:' + y + 'px;' +
+        'width:0;height:0;pointer-events:none;z-index:10;';
+      wrapper.appendChild(host);
+
+      const glow = document.createElement('div');
+      glow.style.cssText =
+        'position:absolute;left:-20px;top:-2px;width:40px;height:4px;' +
+        'background:linear-gradient(to right,transparent,' + color + ',transparent);' +
+        'border-radius:9999px;filter:blur(2px);' +
+        'animation:beamGlowFade 1.5s ease-out forwards;';
+      host.appendChild(glow);
+
+      const pts = Array.from({ length: 20 }, function () {
+        var el = document.createElement('div');
+        el.style.cssText =
+          'position:absolute;width:3px;height:3px;border-radius:50%;' +
+          'background:' + color + ';left:-1.5px;top:-1.5px;';
+        host.appendChild(el);
+        return {
+          el,
+          vx:   Math.random() * 80 - 40,
+          vy: -(Math.random() * 50 + 10),
+          life: Math.random() * 1.5 + 0.5,
+          born: performance.now(),
+        };
+      });
+
+      function animPts(now) {
+        var any = false;
+        for (var i = 0; i < pts.length; i++) {
+          var p = pts[i];
+          var t = (now - p.born) / (p.life * 1000);
+          if (t >= 1) continue;
+          any = true;
+          p.el.style.transform = 'translate(' + (p.vx * t) + 'px,' + (p.vy * t) + 'px)';
+          p.el.style.opacity = String(1 - t);
+        }
+        if (any) requestAnimationFrame(animPts);
+        else host.remove();
+      }
+      requestAnimationFrame(animPts);
+      setTimeout(function () { if (host.parentNode) host.remove(); }, 2500);
+    }
+  })();
+</script>
+<script defer src="https://cdn.vercel-insights.com/v1/script.js"></script>
+
+</body>
+</html>
